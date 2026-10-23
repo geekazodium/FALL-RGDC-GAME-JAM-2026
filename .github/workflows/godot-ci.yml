@@ -70,7 +70,7 @@ jobs:
     name: Upload web build to itch
     runs-on: ubuntu-24.04
     env:
-      BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      BUTLER_API_KEY: ${{ secrets.BUTLER_API_TOKEN }}
       ITCH_USER: ${{ secrets.ITCH_USER }}
       ITCH_GAME: ${{ secrets.ITCH_GAME }}
     if: ${{ (github.repository_owner) == 'geekazodium'}} 
