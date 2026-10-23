@@ -1,0 +1,114 @@
+# MIT License
+
+# Copyright (c) 2018 BARICHELLO
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+name: 'Godot CI Web'
+on:
+  push:
+    branches:
+      - main
+
+# NOTE: If your `project.godot` is at the repository root, set `PROJECT_PATH` below to ".".
+permissions:
+  contents: write
+
+env:
+  GODOT_VERSION: 4.7.2
+  EXPORT_NAME: idk-the-name-for-now
+  PROJECT_PATH: ./
+  EXPORT_BRANCH: gh-pages
+
+jobs:
+  export-web:
+    name: Web Export
+    runs-on: ubuntu-22.04  # Use 22.04 with godot 4
+    container:
+      image: barichello/godot-ci:4.7.2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/export_templates/
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Web Build
+        run: |
+          mkdir -v -p build/web
+          EXPORT_DIR="$(readlink -f build)"
+          cd $PROJECT_PATH
+          godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
+      - name: Install rsync 📚
+        run: |
+          apt-get update && apt-get install -y rsync
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: ${{env.EXPORT_BRANCH}} # The branch the action should deploy to.
+          folder: build/web # The folder the action should deploy.
+  
+  butler-push: ## requires ITCH_PROJECT_CHANNEL secret and ITCH_USER $ITCH_GAME
+    name: Upload web build to itch
+    runs-on: ubuntu-24.04
+    env:
+      BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+      ITCH_USER: ${{ secrets.ITCH_USER }}
+      ITCH_GAME: ${{ secrets.ITCH_GAME }}
+    if: ${{ (github.repository_owner) == 'geekazodium'}} 
+    needs:
+      export-web
+    steps: 
+      - name: Setup
+        run: mkdir nightly/
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{env.EXPORT_BRANCH}}
+          lfs: true
+          path: nightly/
+      # - name: Download Artifact 
+      #   uses: actions/download-artifact@v5
+      #   with:
+      #     # Name of the artifact to download.
+      #     # If unspecified, all artifacts for the run are downloaded.
+      #     # Optional.
+      #     name: web
+      #     path: build/web.zip
+      - name: Zip Nightly
+        run: |
+          mkdir build/
+          cd nightly/
+          ls | zip ../build/web.zip -r -@
+      - name: Install Butler
+        run: |
+          mkdir butler/
+          cd butler/
+          wget --https-only --secure-protocol=TLSv1_3 -O butler.zip https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+      - name: Verify Butler Version
+        run: |
+          cd butler/
+          ./butler -v
+      - name: Butler Push
+        run: |
+          cd butler/
+          ./butler push "../build/web.zip" "$ITCH_USER/$ITCH_GAME:web"
