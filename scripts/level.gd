@@ -28,23 +28,17 @@ var speed
 var hit = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	speed = bpm * delta
-	timePassed += speed
-	if timePassed + delta < ceil(timePassed-delta):
-		if(not hit):
-			beatHit()
-			hit = true
-	else:
-		hit = false
-	
-	
-	for a in areaHolder.get_children():
-		a.position.x -= speed
-	
-	if areaHolder.get_child_count() > 0:
-		if areaHolder.get_child(0).position.x <= -16:
-			removeArea()
-			spawn_new_area()
+    speed = bpm * delta
+    timePassed += speed
+    #print("hit " + str((int(timePassed) / timeSign) + 1) + " : " + str((int(timePassed) % timeSign + 1)))
+    
+    for a in areaHolder.get_children():
+        a.position.x -= speed
+    
+    if areaHolder.get_child_count() > 0:
+        if areaHolder.get_child(0).position.x <= -16:
+            removeArea()
+            spawn_new_area()
 
 func removeArea():
 	var areaToRemove = areaHolder.get_child(0)
