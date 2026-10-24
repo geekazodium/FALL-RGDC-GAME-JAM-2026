@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode blend_premul_alpha, depth_draw_opaque, cull_back, unshaded, shadows_disabled;
+render_mode blend_premul_alpha, depth_draw_opaque, cull_disabled, unshaded, shadows_disabled;
 
 uniform vec4 color : source_color;
 

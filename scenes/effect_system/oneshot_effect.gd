@@ -20,4 +20,5 @@ func _process(delta: float) -> void:
 	if !self.spawned_in:
 		return;
 	if self.duration_left <= 0:
+		self.visible = false;
 		self.queue_free();
