@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://daenbehw6ihdc"]
+
+[ext_resource type="Script" uid="uid://sehjdnt5xvrg" path="res://scripts/main_menu.gd" id="1_yqorp"]
+[ext_resource type="PackedScene" uid="uid://ki0fb7h1g75v" path="res://scenes/teto_anim_test.tscn" id="2_0ykhv"]
+[ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_2wh52"]
+
+[sub_resource type="Animation" id="Animation_0ykhv"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 2)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_2wh52"]
+resource_name = "moveCamera"
+length = 3.0000000000000004
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 2, 1, 1, 2, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0, 0.70710677, 0, 0.70710677)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.5, 0, 8), Vector3(0.5, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ow34m"]
+_data = {
+&"RESET": SubResource("Animation_0ykhv"),
+&"moveCamera": SubResource("Animation_2wh52")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ykhv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
+material = SubResource("StandardMaterial3D_0ykhv")
+size = Vector3(0.1, 10, 10)
+
+[node name="MainMenu" type="Node3D" unique_id=1189686588 node_paths=PackedStringArray("AnimPlayer")]
+script = ExtResource("1_yqorp")
+playScene = ExtResource("2_2wh52")
+AnimPlayer = NodePath("AnimationPlayer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1723734930]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1200506964]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer" unique_id=509668435]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 50
+text = "TETO SCIENTOLOGY SPEEDRUN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BeginButton" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1073444592]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = "Begin"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=89907497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+projection = 1
+
+[node name="Explode" parent="." unique_id=1869451709 instance=ExtResource("2_0ykhv")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=627164596]
+libraries/ = SubResource("AnimationLibrary_ow34m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=890396907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+mesh = SubResource("BoxMesh_7o0as")
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/BeginButton" to="." method="_on_begin_button_pressed"]
