@@ -21,9 +21,11 @@ func _ready() -> void:
     pass # Replace with function body.
 
 var timePassed = 0;
+var speed
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    var speed = bpm * delta
+    speed = bpm * delta
     timePassed += speed
     #print("hit " + str((int(timePassed) / timeSign) + 1) + " : " + str((int(timePassed) % timeSign + 1)))
     
