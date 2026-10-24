@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://b6nb2vigpwv3e"]
 
-[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_rpft6"]
-[gd_scene format=3 uid="uid://byd3q1mlikjny"]
-
-[ext_resource type="Script" uid="uid://cysm6y6rbmuaq" path="res://scenes/game_over.gd" id="1_rpft6"]
+[ext_resource type="Script" uid="uid://cysm6y6rbmuaq" path="res://scripts/game_over.gd" id="1_rpft6"]
 [ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_rpft6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpft6"]
+bg_color = Color(0.77955395, 0.21250814, 0.09760811, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8434782, 0.42226243, 0.8227248, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 2
+expand_margin_left = 25.0
+expand_margin_top = 10.0
+expand_margin_right = 25.0
+expand_margin_bottom = 10.0
 
 [node name="GameOver" type="Node3D" unique_id=332619268]
 script = ExtResource("1_rpft6")
@@ -47,8 +61,9 @@ vertical_alignment = 1
 [node name="Retry" type="Button" parent="Control/GameOver/VBoxContainer" unique_id=1315801713]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_rpft6")
 text = "Retry"
 
 [connection signal="pressed" from="Control/GameOver/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
