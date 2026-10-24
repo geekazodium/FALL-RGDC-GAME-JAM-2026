@@ -1,10 +1,8 @@
-[gd_scene format=3 uid="uid://b6nb2vigpwv3e"]
-
-[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_rpft6"]
 [gd_scene format=3 uid="uid://byd3q1mlikjny"]
 
 [ext_resource type="Script" uid="uid://cysm6y6rbmuaq" path="res://scenes/game_over.gd" id="1_rpft6"]
 [ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_rpft6"]
+[ext_resource type="FontFile" uid="uid://b1bfung1iyu08" path="res://yoster.ttf" id="3_3myqg"]
 
 [node name="GameOver" type="Node3D" unique_id=332619268]
 script = ExtResource("1_rpft6")
@@ -39,6 +37,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_3myqg")
 theme_override_font_sizes/font_size = 64
 text = "Game Over :("
 horizontal_alignment = 1
@@ -48,6 +47,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_3myqg")
 theme_override_font_sizes/font_size = 56
 text = "Retry"
 
