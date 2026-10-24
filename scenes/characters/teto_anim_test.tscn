@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://ki0fb7h1g75v"]
 
 [ext_resource type="Script" uid="uid://3x4g2qyibn5u" path="res://scripts/play_anim_test.gd" id="2_y2ch2"]
-[ext_resource type="PackedScene" uid="uid://bc0uovq7qh6sf" path="res://assets/models/window.fbx" id="4_pgsgt"]
-[ext_resource type="PackedScene" uid="uid://bybg7i4dclyel" path="res://scenes/characters/securityguard.tscn" id="5_3vxm1"]
 [ext_resource type="PackedScene" uid="uid://bc0uovq7qh6sf" path="res://assets/models/window.tscn" id="4_pgsgt"]
+[ext_resource type="PackedScene" uid="uid://bybg7i4dclyel" path="res://scenes/characters/securityguard.tscn" id="5_3vxm1"]
 [ext_resource type="PackedScene" uid="uid://bsfmymqcw1rw8" path="res://assets/models/teto_model.fbx" id="5_k53f4"]
 [ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/pre_parry/flash.tres" id="5_sswr7"]
 
@@ -44,4 +43,4 @@ script = ExtResource("2_y2ch2")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.6024425, 0, 0.03712958)
 
 [node name="securityguard_model2" parent="." unique_id=1372193599 instance=ExtResource("5_3vxm1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08034131, -1.4901161e-08, -0.14128198)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1964659, -0.06797519, -0.5558063)
