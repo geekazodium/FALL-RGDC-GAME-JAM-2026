@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc6do0kx18fe1" path="res://scripts/level.gd" id="1_6pt5r"]
 [ext_resource type="PackedScene" uid="uid://dfaso0blphdpi" path="res://scenes/moving_area_test.tscn" id="2_rghpy"]
+[ext_resource type="PackedScene" uid="uid://b5jpr7m71e8o6" path="res://scenes/moving_area_test_2.tscn" id="3_7ahq7"]
 [ext_resource type="PackedScene" uid="uid://cqa5xfuse8dgk" path="res://scenes/bpm_setter_ui.tscn" id="3_uyjid"]
 
 [node name="Game" type="Node3D" unique_id=1568713828]
@@ -10,7 +11,7 @@
 script = ExtResource("1_6pt5r")
 areaHolder = NodePath(".")
 BPM = 150
-area_scene = ExtResource("2_rghpy")
+area_scene = Array[PackedScene]([ExtResource("2_rghpy"), ExtResource("3_7ahq7")])
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=548941266]
 transform = Transform3D(1, 0, 0, 0, 0.97477007, 0.22321141, 0, -0.22321141, 0.97477007, 0, 2.5673826, 3.6499724)
