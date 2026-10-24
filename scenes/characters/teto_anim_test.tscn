@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ki0fb7h1g75v"]
+
+[ext_resource type="Script" uid="uid://3x4g2qyibn5u" path="res://scripts/play_anim_test.gd" id="2_y2ch2"]
+[ext_resource type="PackedScene" uid="uid://bsfmymqcw1rw8" path="res://assets/models/teto_model.fbx" id="5_k53f4"]
+[ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/pre_parry/flash.tres" id="5_sswr7"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qqjg0"]
+material = ExtResource("5_sswr7")
+
+[node name="TetoAnimTest" type="Node3D" unique_id=1869451709]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1530768034]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+mouse_target = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=383648612]
+handle_input_locally = false
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=168700380]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 0, 0)
+projection = 1
+size = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1312234577]
+material_override = ExtResource("5_sswr7")
+mesh = SubResource("QuadMesh_qqjg0")
+
+[node name="teto_updated" parent="SubViewportContainer/SubViewport" unique_id=640150139 instance=ExtResource("5_k53f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+script = ExtResource("2_y2ch2")

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://daenbehw6ihdc"]
 
 [ext_resource type="Script" uid="uid://sehjdnt5xvrg" path="res://scripts/main_menu.gd" id="1_yqorp"]
-[ext_resource type="PackedScene" uid="uid://ki0fb7h1g75v" path="res://scenes/teto_anim_test.tscn" id="2_0ykhv"]
+[ext_resource type="PackedScene" uid="uid://ki0fb7h1g75v" path="res://scenes/characters/teto_anim_test.tscn" id="2_0ykhv"]
 [ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_2wh52"]
 
 [sub_resource type="Animation" id="Animation_0ykhv"]
@@ -116,4 +116,3 @@ mesh = SubResource("BoxMesh_7o0as")
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/BeginButton" to="." method="_on_begin_button_pressed"]
 
 [editable path="Explode"]
-[editable path="Explode/SubViewportContainer/SubViewport/P03_FIX_ATTEMPT_2"]

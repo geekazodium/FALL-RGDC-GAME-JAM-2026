@@ -3,7 +3,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimationPlayer.current_animation = "rig|rigAction";
+	$AnimationPlayer.current_animation = "rig|run";
 	pass # Replace with function body.
 
 

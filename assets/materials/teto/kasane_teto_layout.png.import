@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpwrjtif6t8kg"
-path.s3tc="res://.godot/imported/T_KasaneTeto_Layout.png-9306b7abec8e8fe046566576990eabc1.s3tc.ctex"
+uid="uid://xhne271veg3l"
+path.s3tc="res://.godot/imported/kasane_teto_layout.png-6e8772e4d078cf296c229daa9c26a286.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/materials/teto/T_KasaneTeto_Layout.png"
-dest_files=["res://.godot/imported/T_KasaneTeto_Layout.png-9306b7abec8e8fe046566576990eabc1.s3tc.ctex"]
+source_file="res://assets/materials/teto/kasane_teto_layout.png"
+dest_files=["res://.godot/imported/kasane_teto_layout.png-6e8772e4d078cf296c229daa9c26a286.s3tc.ctex"]
 
 [params]
 
