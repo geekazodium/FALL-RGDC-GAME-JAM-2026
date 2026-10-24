@@ -4,6 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://ki0fb7h1g75v" path="res://scenes/characters/teto_anim_test.tscn" id="2_0ykhv"]
 [ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_2wh52"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ykhv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
+material = SubResource("StandardMaterial3D_0ykhv")
+size = Vector3(0.1, 10, 10)
+
 [sub_resource type="Animation" id="Animation_0ykhv"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -16,7 +23,7 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 2)
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/path = NodePath("Explode/SubViewportContainer/SubViewport/MeshInstance3D2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -46,7 +53,7 @@ tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0, 0.70710677, 0, 0.7
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MeshInstance3D:position")
+tracks/2/path = NodePath("Explode/SubViewportContainer/SubViewport/MeshInstance3D2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -61,13 +68,6 @@ _data = {
 &"RESET": SubResource("Animation_0ykhv"),
 &"moveCamera": SubResource("Animation_2wh52")
 }
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ykhv"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
-material = SubResource("StandardMaterial3D_0ykhv")
-size = Vector3(0.1, 10, 10)
 
 [node name="MainMenu" type="Node3D" unique_id=1189686588 node_paths=PackedStringArray("AnimPlayer")]
 script = ExtResource("1_yqorp")
@@ -101,17 +101,17 @@ text = "Begin"
 
 [node name="Explode" parent="." unique_id=1869451709 instance=ExtResource("2_0ykhv")]
 
-[node name="Camera3D2" type="Camera3D" parent="Explode/SubViewportContainer/SubViewport" parent_id_path=PackedInt32Array(1869451709, 383648612) index="3" unique_id=89907497]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Explode/SubViewportContainer/SubViewport" parent_id_path=PackedInt32Array(1869451709, 383648612) index="0" unique_id=890396907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+mesh = SubResource("BoxMesh_7o0as")
+
+[node name="Camera3D2" type="Camera3D" parent="Explode/SubViewportContainer/SubViewport" parent_id_path=PackedInt32Array(1869451709, 383648612) index="4" unique_id=89907497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 projection = 1
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=627164596]
 libraries/ = SubResource("AnimationLibrary_ow34m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=890396907]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
-mesh = SubResource("BoxMesh_7o0as")
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/BeginButton" to="." method="_on_begin_button_pressed"]
 

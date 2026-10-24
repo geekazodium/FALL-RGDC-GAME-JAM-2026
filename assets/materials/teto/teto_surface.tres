@@ -1,9 +1,0 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://dgqjo12pus8rn"]
-
-[ext_resource type="Shader" uid="uid://da3y48ga1rils" path="res://assets/materials/teto/unlit_albedo.gdshader" id="1_cbr2e"]
-[ext_resource type="Texture2D" uid="uid://xhne271veg3l" path="res://assets/materials/teto/kasane_teto_layout.png" id="2_dds5i"]
-
-[resource]
-render_priority = 0
-shader = ExtResource("1_cbr2e")
-shader_parameter/MainTexture = ExtResource("2_dds5i")

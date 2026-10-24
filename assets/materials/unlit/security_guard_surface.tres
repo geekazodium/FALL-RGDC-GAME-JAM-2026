@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cgoaet7vn5lta"]
+
+[ext_resource type="Shader" uid="uid://da3y48ga1rils" path="res://assets/materials/unlit/unlit_albedo.gdshader" id="1_c5nw4"]
+[ext_resource type="Texture2D" uid="uid://cul5lcpyohihp" path="res://assets/materials/unlit/security_guard_layout.png" id="2_c5nw4"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_c5nw4")
+shader_parameter/MainTexture = ExtResource("2_c5nw4")
