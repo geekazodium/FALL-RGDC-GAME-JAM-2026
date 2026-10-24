@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cqa5xfuse8dgk"]
+
+[ext_resource type="Script" uid="uid://dn6vmeup4d6kk" path="res://scripts/bpm_setter.gd" id="1_ki4vm"]
+
+[node name="BPM Setter UI" type="Control" unique_id=2099664311]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ki4vm")
+
+[node name="Button" type="Button" parent="." unique_id=1383023901]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 577.0
+offset_right = 1114.0
+offset_bottom = 629.0
+text = "Set BPM"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1287163278]
+layout_mode = 0
+offset_left = 989.0
+offset_top = 554.0
+offset_right = 1102.0
+offset_bottom = 570.0
+min_value = 60.0
+max_value = 200.0
+value = 120.0
+rounded = true
+
+[node name="Label" type="Label" parent="." unique_id=850929964]
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 527.0
+offset_right = 1069.0
+offset_bottom = 550.0

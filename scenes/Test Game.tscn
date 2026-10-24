@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://sqskgqjmxcpt"]
+
+[ext_resource type="Script" uid="uid://cc6do0kx18fe1" path="res://scripts/level.gd" id="1_6pt5r"]
+[ext_resource type="PackedScene" uid="uid://dfaso0blphdpi" path="res://scenes/moving_area_test.tscn" id="2_rghpy"]
+[ext_resource type="PackedScene" uid="uid://cqa5xfuse8dgk" path="res://scenes/bpm_setter_ui.tscn" id="3_uyjid"]
+
+[node name="Game" type="Node3D" unique_id=1568713828]
+
+[node name="Level" type="Node3D" parent="." unique_id=1423305782 node_paths=PackedStringArray("areaHolder")]
+script = ExtResource("1_6pt5r")
+areaHolder = NodePath(".")
+BPM = 150
+area_scene = ExtResource("2_rghpy")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=548941266]
+transform = Transform3D(1, 0, 0, 0, 0.97477007, 0.22321141, 0, -0.22321141, 0.97477007, 0, 2.5673826, 3.6499724)
+size = 3.0
+
+[node name="AreaLight3D" type="AreaLight3D" parent="Camera3D" unique_id=534807900]
+
+[node name="BPM Setter UI" parent="." unique_id=2099664311 instance=ExtResource("3_uyjid")]
