@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c8dciotu50fo7"]
+
+[ext_resource type="Shader" uid="uid://4gdbanl6t3a6" path="res://scenes/effect_system/trails/trail_shader.gdshader" id="1_dmcjl"]
+[ext_resource type="Script" uid="uid://vsam0ibvisyw" path="res://scenes/effect_system/trails/trail_mesh.gd" id="2_hnwvl"]
+[ext_resource type="Script" uid="uid://dkcr0ecwrah47" path="res://scenes/effect_system/trails/global_movement_trail.gd" id="3_k7wml"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrwfi"]
+render_priority = 0
+shader = ExtResource("1_dmcjl")
+shader_parameter/finite_difference_step = 0.05
+shader_parameter/color = Color(3.6291957, 3.6291957, 3.6291957, 1)
+shader_parameter/start_direction = Vector3(0, 1, 0)
+shader_parameter/end_direction = Vector3(0, 1, 0)
+shader_parameter/midpoint = Vector3(0, 0, 0)
+shader_parameter/start_position = Vector3(0, 0, 0)
+shader_parameter/end_position = Vector3(0, 0, 0)
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_640xh"]
+shape = 0
+size = 0.2
+section_segments = 5
+
+[node name="AutoTrailMesh" type="MeshInstance3D"]
+process_priority = 10
+material_override = SubResource("ShaderMaterial_xrwfi")
+cast_shadow = 2
+mesh = SubResource("RibbonTrailMesh_640xh")
+script = ExtResource("2_hnwvl")
+color = Color(3.6291957, 3.6291957, 3.6291957, 1)
+metadata/_custom_type_script = "uid://vsam0ibvisyw"
+
+[node name="GlobalMovementTrail" type="Node" parent="."]
+script = ExtResource("3_k7wml")

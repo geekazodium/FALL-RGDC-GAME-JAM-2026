@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b4r77gv8u6pk0"]
+
+[ext_resource type="Shader" uid="uid://bb1f3hcpsomjk" path="res://assets/materials/effects/corner_flash_effect.gdshader" id="1_jdqlh"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jdqlh")
+shader_parameter/color = Color(0.8151849, 0, 0.27332726, 1)
+shader_parameter/time = 0.9508078787878786
+shader_parameter/time_factor = 1.0
+shader_parameter/main_texture_gamma = 0.0

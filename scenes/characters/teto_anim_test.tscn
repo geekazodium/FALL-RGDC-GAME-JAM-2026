@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bc0uovq7qh6sf" path="res://assets/models/window.tscn" id="4_pgsgt"]
 [ext_resource type="PackedScene" uid="uid://bybg7i4dclyel" path="res://scenes/characters/securityguard.tscn" id="5_3vxm1"]
 [ext_resource type="PackedScene" uid="uid://bsfmymqcw1rw8" path="res://assets/models/teto_model.fbx" id="5_k53f4"]
-[ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/pre_parry/flash.tres" id="5_sswr7"]
+[ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/flash.tres" id="5_sswr7"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qqjg0"]
 material = ExtResource("5_sswr7")
@@ -42,5 +42,5 @@ script = ExtResource("2_y2ch2")
 [node name="window" parent="SubViewportContainer/SubViewport" unique_id=1721686881 instance=ExtResource("4_pgsgt")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.6024425, 0, 0.03712958)
 
-[node name="securityguard_model2" parent="." unique_id=1372193599 instance=ExtResource("5_3vxm1")]
+[node name="securityguard_model2" parent="SubViewportContainer/SubViewport" unique_id=1372193599 instance=ExtResource("5_3vxm1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1964659, -0.06797519, -0.5558063)
