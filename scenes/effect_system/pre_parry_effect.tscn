@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cke14e7f8rlh2"]
+
+[ext_resource type="Script" uid="uid://dko47k03cycso" path="res://scenes/effect_system/oneshot_effect.gd" id="1_jvdl7"]
+[ext_resource type="Script" uid="uid://ctjkbxcqd7jo1" path="res://scenes/effect_system/pitched_audio_stream_player_3d.gd" id="3_v77rk"]
+[ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/flash.tres" id="4_l5b4o"]
+[ext_resource type="Script" uid="uid://c12mcqkxsrcny" path="res://scenes/effect_system/mesh_instance_effect.gd" id="5_3486t"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7i2jv"]
+size = Vector2(5, 5)
+
+[node name="PreParryEffect" type="Node3D" unique_id=544561084]
+script = ExtResource("1_jvdl7")
+duration = 0.1
+metadata/_custom_type_script = "uid://dko47k03cycso"
+
+[node name="PitchedAudioStream3D" type="AudioStreamPlayer3D" parent="." unique_id=153990228]
+autoplay = true
+script = ExtResource("3_v77rk")
+min_pitch = 0.7
+max_pitch = 1.0
+metadata/_custom_type_script = "uid://ctjkbxcqd7jo1"
+
+[node name="MeshInstanceEffect" type="MeshInstance3D" parent="." unique_id=1266289398]
+material_override = ExtResource("4_l5b4o")
+mesh = SubResource("QuadMesh_7i2jv")
+script = ExtResource("5_3486t")
+duration = 0.3

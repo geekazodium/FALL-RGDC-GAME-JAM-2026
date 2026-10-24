@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c5x3n00l7w3p0"]
+
+[ext_resource type="Script" uid="uid://dko47k03cycso" path="res://scenes/effect_system/oneshot_effect.gd" id="1_5jeov"]
+[ext_resource type="Material" uid="uid://b4r77gv8u6pk0" path="res://assets/materials/effects/shout_1.tres" id="2_n4u8d"]
+[ext_resource type="Script" uid="uid://c12mcqkxsrcny" path="res://scenes/effect_system/mesh_instance_effect.gd" id="3_arx3c"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jeyjb"]
+
+[node name="ProjectileParryEffect" type="Node3D" unique_id=1751039632]
+script = ExtResource("1_5jeov")
+duration = 0.3
+metadata/_custom_type_script = "uid://dko47k03cycso"
+
+[node name="MeshInstanceEffect" type="MeshInstance3D" parent="." unique_id=570226125]
+transform = Transform3D(6.181724e-08, -2.560554e-08, 2, 1.4142135, 1.4142135, -2.5605544e-08, -1.4142135, 1.4142135, 6.181724e-08, 0, 0, -1.414)
+material_override = ExtResource("2_n4u8d")
+mesh = SubResource("QuadMesh_jeyjb")
+script = ExtResource("3_arx3c")
+duration = 0.3
