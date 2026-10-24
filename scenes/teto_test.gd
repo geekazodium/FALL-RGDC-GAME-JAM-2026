@@ -13,6 +13,5 @@ func _on_smol_scream_hitbox_body_entered(body: Node3D) -> void:
 func _on_beeg_scream_hitbox_body_entered(body: Node3D) -> void:
 	emit_signal("hit_beeg_scream")
 
-
 func _on_hurtbox_body_entered(body: Node3D) -> void:
 	emit_signal("caught")

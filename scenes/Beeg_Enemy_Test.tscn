@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cqrsgvla5wbya"]
+
+[ext_resource type="Script" uid="uid://cehb0h0ejpsba" path="res://scenes/Beeg_enemy_test.gd" id="1_bajjp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vu3ll"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ncnps"]
+
+[node name="EnemyTest" type="CharacterBody3D" unique_id=1460065781]
+script = ExtResource("1_bajjp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=376195256]
+shape = SubResource("BoxShape3D_vu3ll")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=1787915602]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=239917900]
+shape = SubResource("BoxShape3D_ncnps")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

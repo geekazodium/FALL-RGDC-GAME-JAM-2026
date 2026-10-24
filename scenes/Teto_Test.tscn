@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://671wuj0oyla"]
 
 [ext_resource type="Script" uid="uid://b3vksup7nhef8" path="res://scenes/teto_test.gd" id="1_k0dhj"]
+[ext_resource type="Script" uid="uid://cjjbdli4xdaj4" path="res://scenes/smol_scream_hitbox.gd" id="2_7v17p"]
+[ext_resource type="Script" uid="uid://qur5nim85863" path="res://scenes/beeg_scream_hitbox.gd" id="3_hnwb1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vu3ll"]
 
@@ -17,12 +19,14 @@ script = ExtResource("1_k0dhj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1857821129]
 shape = SubResource("BoxShape3D_vu3ll")
 
-[node name="Smol_Scream_Hitbox" type="Area3D" parent="." unique_id=964719981]
+[node name="Smol_Scream_Hitbox" type="Area3D" parent="." unique_id=964719981 groups=["Smol_Scream"]]
+script = ExtResource("2_7v17p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Smol_Scream_Hitbox" unique_id=1391075950]
 shape = SubResource("BoxShape3D_ncnps")
 
 [node name="Beeg_Scream_Hitbox" type="Area3D" parent="." unique_id=156212889]
+script = ExtResource("3_hnwb1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Beeg_Scream_Hitbox" unique_id=1643704880]
 shape = SubResource("BoxShape3D_o66tr")
