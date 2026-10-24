@@ -4,23 +4,21 @@ extends Node3D
 
 @export var BPM:int = 120
 @export var timeSign:int = 4
-@export var area_scene:PackedScene
-
+@export var area_scene:Array[PackedScene]
 
 var bpm = 0
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	bpm = BPM / 60
 	var placement = -8
 	for a in range(5):
-		var scene = area_scene.instantiate().get_node(".")
+		var rand = randi() % area_scene.size()
+		var scene = area_scene.get(rand).instantiate().get_node(".")
 		scene.position.x = placement
 		scene.position.y = 0
 		areaHolder.add_child(scene)
 		placement += 8
-		print(scene.position)
 	pass # Replace with function body.
 
 var timePassed = 0;
@@ -39,18 +37,19 @@ func _process(delta: float) -> void:
 	for a in areaHolder.get_children():
 		a.position.x -= speed
 	
-	if areaHolder.get_child(0).position.x <= -16:
-		removeArea()
-		spawn_new_area()
+	if areaHolder.get_child_count() > 0:
+		if areaHolder.get_child(0).position.x <= -16:
+			removeArea()
+			spawn_new_area()
 
 func removeArea():
 	var areaToRemove = areaHolder.get_child(0)
 	areaHolder.remove_child(areaToRemove)
 	areaToRemove.free()
-	print("removed")
 
 func spawn_new_area():
-	var scene = area_scene.instantiate().get_node(".")
+	var rand = randi() % area_scene.size()
+	var scene = area_scene.get(rand).instantiate().get_node(".")
 	scene.position.x = 16
 	scene.position.y = 0
 	areaHolder.add_child(scene)
