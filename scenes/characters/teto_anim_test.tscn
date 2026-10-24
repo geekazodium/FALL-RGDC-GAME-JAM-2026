@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ki0fb7h1g75v"]
 
 [ext_resource type="Script" uid="uid://3x4g2qyibn5u" path="res://scripts/play_anim_test.gd" id="2_y2ch2"]
-[ext_resource type="PackedScene" uid="uid://bc0uovq7qh6sf" path="res://assets/models/window.fbx" id="4_pgsgt"]
+[ext_resource type="PackedScene" uid="uid://bc0uovq7qh6sf" path="res://assets/models/window.tscn" id="4_pgsgt"]
 [ext_resource type="PackedScene" uid="uid://bsfmymqcw1rw8" path="res://assets/models/teto_model.fbx" id="5_k53f4"]
 [ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/pre_parry/flash.tres" id="5_sswr7"]
 
