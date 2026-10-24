@@ -1,9 +1,22 @@
-extends Node3D
+extends MeshInstance3D
+class_name Enemy
 
-@export var winScene : PackedScene
+@export var boneRoot : PhysicalBoneSimulator3D
 
-func _on_body_entered(body: Node3D) -> void:
-	if body.name == "Player_Col":
-		print("hit player, should win")
-		get_tree().change_scene_to_packed(winScene)
-		
+var isStunned = false
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func stun():
+	if not isStunned:
+		isStunned = true
+		print("Hit by Player")
+		ragdoll()
+
+func ragdoll():
+	boneRoot.physical_bones_start_simulation()
