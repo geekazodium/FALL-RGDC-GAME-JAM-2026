@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3cy6om8eylrw"]
 
-[ext_resource type="PackedScene" uid="uid://ule45n5xhbeg" path="res://scenes/ragdollGuy.tscn" id="1_55sad"]
+[ext_resource type="PackedScene" uid="uid://bme3t1qdvoy4e" path="res://scenes/securityguard.tscn" id="1_55sad"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7o0as"]
 size = Vector3(10, 0.1, 100)
@@ -18,11 +18,11 @@ shape = SubResource("BoxShape3D_7o0as")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2008754939]
 mesh = SubResource("BoxMesh_1ka5s")
 
-[node name="Sketchfab_Scene" parent="." unique_id=286831334 instance=ExtResource("1_55sad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17036414, 0.17695594, 0.67442226)
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1576160635]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41396737, 2.4766073, 13.018866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41396737, 1.5669498, 11.157559)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=745450485]
 transform = Transform3D(1, 0, 0, 0, 0.5074257, 0.8616955, 0, -0.8616955, 0.5074257, 0, 10.361685, 0)
+
+[node name="securityguard_model" parent="." unique_id=853223018 instance=ExtResource("1_55sad")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.30965233, 0.05000019, 8.389759)
