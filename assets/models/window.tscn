@@ -620,6 +620,7 @@ shape = SubResource("ConcavePolygonShape3D_we4uo")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1619494913]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_000" type="MeshInstance3D" parent="RigidBody3D" unique_id=1058187420]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -631,6 +632,7 @@ shape = SubResource("ConcavePolygonShape3D_kl3gw")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=1152906687]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_001" type="MeshInstance3D" parent="RigidBody3D2" unique_id=362015143]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -642,6 +644,7 @@ shape = SubResource("ConcavePolygonShape3D_scs0f")
 
 [node name="RigidBody3D3" type="RigidBody3D" parent="." unique_id=1260699143]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_002" type="MeshInstance3D" parent="RigidBody3D3" unique_id=1565417016]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -653,6 +656,7 @@ shape = SubResource("ConcavePolygonShape3D_rs6p8")
 
 [node name="RigidBody3D4" type="RigidBody3D" parent="." unique_id=1591323584]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_003" type="MeshInstance3D" parent="RigidBody3D4" unique_id=1965344280]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -664,6 +668,7 @@ shape = SubResource("ConcavePolygonShape3D_oja4u")
 
 [node name="RigidBody3D5" type="RigidBody3D" parent="." unique_id=34175606]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_004" type="MeshInstance3D" parent="RigidBody3D5" unique_id=440209265]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -675,6 +680,7 @@ shape = SubResource("ConcavePolygonShape3D_0o14o")
 
 [node name="RigidBody3D6" type="RigidBody3D" parent="." unique_id=56620614]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_005" type="MeshInstance3D" parent="RigidBody3D6" unique_id=2072771203]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -686,6 +692,7 @@ shape = SubResource("ConcavePolygonShape3D_j1sej")
 
 [node name="RigidBody3D7" type="RigidBody3D" parent="." unique_id=1321599520]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_006" type="MeshInstance3D" parent="RigidBody3D7" unique_id=243052057]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -697,6 +704,7 @@ shape = SubResource("ConcavePolygonShape3D_asqcx")
 
 [node name="RigidBody3D8" type="RigidBody3D" parent="." unique_id=1924459079]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_007" type="MeshInstance3D" parent="RigidBody3D8" unique_id=1762458736]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -708,6 +716,7 @@ shape = SubResource("ConcavePolygonShape3D_scu3f")
 
 [node name="RigidBody3D9" type="RigidBody3D" parent="." unique_id=2085480427]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_008" type="MeshInstance3D" parent="RigidBody3D9" unique_id=1761431879]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -719,6 +728,7 @@ shape = SubResource("ConcavePolygonShape3D_7yimk")
 
 [node name="RigidBody3D10" type="RigidBody3D" parent="." unique_id=1403042539]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_009" type="MeshInstance3D" parent="RigidBody3D10" unique_id=159185112]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -730,6 +740,7 @@ shape = SubResource("ConcavePolygonShape3D_843on")
 
 [node name="RigidBody3D11" type="RigidBody3D" parent="." unique_id=1935679589]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_010" type="MeshInstance3D" parent="RigidBody3D11" unique_id=2047977769]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -741,6 +752,7 @@ shape = SubResource("ConcavePolygonShape3D_0tu2j")
 
 [node name="RigidBody3D12" type="RigidBody3D" parent="." unique_id=393582687]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_011" type="MeshInstance3D" parent="RigidBody3D12" unique_id=1537072989]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -752,6 +764,7 @@ shape = SubResource("ConcavePolygonShape3D_s34ba")
 
 [node name="RigidBody3D13" type="RigidBody3D" parent="." unique_id=18499866]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_012" type="MeshInstance3D" parent="RigidBody3D13" unique_id=734248345]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -762,6 +775,7 @@ transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1
 shape = SubResource("ConcavePolygonShape3D_d7e62")
 
 [node name="RigidBody3D14" type="RigidBody3D" parent="." unique_id=28827425]
+freeze = true
 
 [node name="SM_WindowPane_013" type="MeshInstance3D" parent="RigidBody3D14" unique_id=1632107116]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -773,6 +787,7 @@ shape = SubResource("ConcavePolygonShape3D_hpgey")
 
 [node name="RigidBody3D15" type="RigidBody3D" parent="." unique_id=472185010]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_014" type="MeshInstance3D" parent="RigidBody3D15" unique_id=1334589654]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
@@ -784,6 +799,7 @@ shape = SubResource("ConcavePolygonShape3D_o6hkb")
 
 [node name="RigidBody3D16" type="RigidBody3D" parent="." unique_id=669448928]
 gravity_scale = 0.5
+freeze = true
 
 [node name="SM_WindowPane_015" type="MeshInstance3D" parent="RigidBody3D16" unique_id=1849331957]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
