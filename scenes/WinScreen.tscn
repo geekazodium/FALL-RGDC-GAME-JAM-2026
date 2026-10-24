@@ -2,6 +2,20 @@
 
 [ext_resource type="Script" uid="uid://bbn4jy6v10440" path="res://scenes/win_screen.gd" id="1_okh34"]
 [ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_q8i45"]
+[ext_resource type="FontFile" uid="uid://cilcccn0oen3j" path="res://assets/Fonts/yoster.ttf" id="3_q8i45"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpft6"]
+border_width_left = 10
+border_width_top = 10
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 2
+expand_margin_left = 25.0
+expand_margin_top = 10.0
+expand_margin_right = 25.0
+expand_margin_bottom = 10.0
 
 [node name="WinScreen" type="Node3D" unique_id=1658752009]
 script = ExtResource("1_okh34")
@@ -35,6 +49,7 @@ grow_vertical = 2
 [node name="WinText" type="Label" parent="Control/WinScreenWindow/VBoxContainer" unique_id=1429828840]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_q8i45")
 theme_override_font_sizes/font_size = 183
 text = "EPIC WIN!!!!!"
 horizontal_alignment = 1
@@ -42,8 +57,11 @@ vertical_alignment = 1
 
 [node name="Play Again" type="Button" parent="Control/WinScreenWindow/VBoxContainer" unique_id=1009795201]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 183
+theme_override_fonts/font = ExtResource("3_q8i45")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_rpft6")
 text = "Play Again"
 
 [connection signal="pressed" from="Control/WinScreenWindow/VBoxContainer/Play Again" to="." method="_on_play_again_pressed"]
