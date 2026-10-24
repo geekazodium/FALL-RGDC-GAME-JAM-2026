@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://fd3xbtl04kje"]
 
-[ext_resource type="Shader" uid="uid://dc5cdt24y51lv" path="res://assets/materials/effects/flash_effect.gdshader" id="1_6v3ye"]
+[ext_resource type="Shader" uid="uid://dc5cdt24y51lv" path="res://assets/materials/effects/flash_effect.gdshader" id="1_quck0"]
 
 [sub_resource type="Curve" id="Curve_6v3ye"]
 bake_resolution = 32
@@ -12,11 +12,11 @@ curve = SubResource("Curve_6v3ye")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_yvwws"]
 noise_type = 2
-frequency = 0.3
+frequency = 0.15
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aqysu"]
-width = 48
-height = 48
+width = 64
+height = 64
 generate_mipmaps = false
 noise = SubResource("FastNoiseLite_yvwws")
 
@@ -29,9 +29,9 @@ curve = SubResource("Curve_lcd5q")
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_6v3ye")
+shader = ExtResource("1_quck0")
 shader_parameter/color = Color(1.457923, 2.5055556, 3.2939992, 1)
-shader_parameter/time = 0.2
+shader_parameter/time = 0.6856203703703538
 shader_parameter/time_curve = SubResource("CurveTexture_ifwo4")
 shader_parameter/brightness = SubResource("CurveTexture_lcd5q")
 shader_parameter/billboard = 1.0

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b2sggus755dbc"]
+
+[ext_resource type="Shader" path="res://scenes/effects/trails/trail_shader.gdshader" id="1_48g2g"]
+[ext_resource type="Script" path="res://scenes/effects/trails/trail_mesh.gd" id="2_p5cdq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vdyda"]
+render_priority = 0
+shader = ExtResource("1_48g2g")
+shader_parameter/finite_difference_step = 0.05
+shader_parameter/color = Color(3.6291957, 3.6291957, 3.6291957, 1)
+shader_parameter/start_direction = Vector3(0, 1, 0)
+shader_parameter/end_direction = Vector3(0, 1, 0)
+shader_parameter/midpoint = Vector3(0, 0, 0)
+shader_parameter/start_position = Vector3(0, 0, 0)
+shader_parameter/end_position = Vector3(0, 0, 0)
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_640xh"]
+shape = 0
+size = 0.2
+section_segments = 5
+
+[node name="TrailMesh" type="MeshInstance3D"]
+process_priority = 10
+material_override = SubResource("ShaderMaterial_vdyda")
+cast_shadow = 2
+mesh = SubResource("RibbonTrailMesh_640xh")
+script = ExtResource("2_p5cdq")
+color = Color(3.6291957, 3.6291957, 3.6291957, 1)
+metadata/_custom_type_script = "uid://vsam0ibvisyw"

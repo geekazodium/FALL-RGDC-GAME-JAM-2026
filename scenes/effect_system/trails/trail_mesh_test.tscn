@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cq7eynjrmksxj"]
+
+[ext_resource type="PackedScene" uid="uid://c8dciotu50fo7" path="res://scenes/effect_system/trails/trail_mesh_automatic.tscn" id="1_euo7j"]
+[ext_resource type="Shader" uid="uid://4gdbanl6t3a6" path="res://scenes/effect_system/trails/trail_shader.gdshader" id="2_640xh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x00s6"]
+render_priority = 0
+shader = ExtResource("2_640xh")
+shader_parameter/finite_difference_step = 0.1
+shader_parameter/color = Color(3.6291957, 3.6291957, 3.6291957, 1)
+shader_parameter/start_direction = Vector3(0, 1, 0)
+shader_parameter/end_direction = Vector3(0, 1, 1.7881402e-07)
+shader_parameter/midpoint = Vector3(0, 0, 0)
+shader_parameter/start_position = Vector3(0, 0, 0)
+shader_parameter/end_position = Vector3(0, 0, 0)
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_640xh"]
+shape = 0
+size = 0.2
+section_segments = 5
+
+[node name="TrailMeshTest" type="Node3D" unique_id=1458230547]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1833326987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5485404, 0.11068773, 1.9092379)
+light_color = Color(8.187468, 0, 0, 1)
+omni_range = 3.5850155
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1619125358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63518, 1.8951762, -1.0798619)
+light_color = Color(0, 0, 18.892157, 1)
+omni_range = 3.5850155
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=835434914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.093322635, 1.8951762, 1.3727895)
+light_color = Color(0, 18.892157, 0, 1)
+omni_range = 3.5850155
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1839311460]
+transform = Transform3D(0.6115823, 0, -0.79118073, 0, 1, 0, 0.79118073, 0, 0.6115823, 0, 0, 0)
+
+[node name="TrailMesh" parent="Node3D" unique_id=1927427758 instance=ExtResource("1_euo7j")]
+transform = Transform3D(-0.32220626, 0.29747897, 1.601028, 1.6170176, -0.1344321, 0.35040238, 0.19244987, 1.6275853, -0.26368302, 0.09394196, 0.11289096, -0.6698175)
+material_override = SubResource("ShaderMaterial_x00s6")
+mesh = SubResource("RibbonTrailMesh_640xh")
+skeleton = NodePath("../..")
