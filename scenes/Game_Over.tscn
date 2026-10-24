@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b6nb2vigpwv3e"]
+
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_rpft6"]
+[ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_rpft6"]
+
+[node name="GameOver" type="Node3D" unique_id=332619268]
+script = ExtResource("1_rpft6")
+playScene = ExtResource("2_rpft6")
+
+[node name="Control" type="Control" parent="." unique_id=773977489]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="ColorRect" parent="Control" unique_id=1066546717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/GameOver" unique_id=327354497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverText" type="Label" parent="Control/GameOver/VBoxContainer" unique_id=1033119846]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "Game Over :("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="Control/GameOver/VBoxContainer" unique_id=1315801713]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 56
+text = "Retry"
+
+[connection signal="pressed" from="Control/GameOver/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
