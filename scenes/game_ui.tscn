@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://isf0plmrgugg" path="res://scripts/game_ui.gd" id="1_yubou"]
 [ext_resource type="PackedScene" uid="uid://cqa5xfuse8dgk" path="res://scenes/bpm_setter_ui.tscn" id="2_rns2u"]
 [ext_resource type="PackedScene" uid="uid://cfroh8jedd8kf" path="res://scenes/met_bar.tscn" id="2_u001w"]
+[ext_resource type="FontFile" uid="uid://cilcccn0oen3j" path="res://assets/fonts/yoster.ttf" id="3_u2dgd"]
 
 [node name="Game UI" type="Control" unique_id=1675265441]
 layout_mode = 3
@@ -25,6 +26,7 @@ anchors_preset = -1
 anchor_right = 4.0750003
 anchor_bottom = 1.25
 offset_right = -1.5258789e-05
+theme_override_fonts/font = ExtResource("3_u2dgd")
 text = "HELLO"
 horizontal_alignment = 1
 vertical_alignment = 1

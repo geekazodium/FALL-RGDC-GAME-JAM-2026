@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqa5xfuse8dgk"]
 
 [ext_resource type="Script" uid="uid://dn6vmeup4d6kk" path="res://scripts/bpm_setter.gd" id="1_ki4vm"]
+[ext_resource type="FontFile" uid="uid://cilcccn0oen3j" path="res://assets/fonts/yoster.ttf" id="2_7jrav"]
 
 [node name="BPM Setter UI" type="Control" unique_id=2099664311]
 layout_mode = 3
@@ -17,6 +18,7 @@ offset_left = 982.0
 offset_top = 577.0
 offset_right = 1114.0
 offset_bottom = 629.0
+theme_override_fonts/font = ExtResource("2_7jrav")
 text = "Set BPM"
 
 [node name="HSlider" type="HSlider" parent="." unique_id=1287163278]
@@ -36,3 +38,4 @@ offset_left = 1029.0
 offset_top = 527.0
 offset_right = 1069.0
 offset_bottom = 550.0
+theme_override_fonts/font = ExtResource("2_7jrav")
