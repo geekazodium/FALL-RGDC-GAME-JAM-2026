@@ -2,15 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://ci53cwt3whuqv" path="res://assets/models/teto_broken.fbx" id="1_qik77"]
 [ext_resource type="Script" uid="uid://3x4g2qyibn5u" path="res://scripts/play_anim_test.gd" id="2_y2ch2"]
-[ext_resource type="Material" uid="uid://dgqjo12pus8rn" path="res://assets/materials/test-to.tres" id="3_sswr7"]
+[ext_resource type="Material" uid="uid://dgqjo12pus8rn" path="res://assets/materials/teto/test-to.tres" id="3_sswr7"]
+[ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/pre_parry/flash.tres" id="5_sswr7"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qqjg0"]
+material = ExtResource("5_sswr7")
 
 [node name="Explode" type="Node3D" unique_id=1869451709]
 
-[node name="P03_FIX_ATTEMPT_2" parent="." unique_id=1921797922 instance=ExtResource("1_qik77")]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1530768034]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=383648612]
+handle_input_locally = false
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="P03_FIX_ATTEMPT_2" parent="SubViewportContainer/SubViewport" unique_id=1921797922 instance=ExtResource("1_qik77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02690193, -0.3877561, 0.014311463)
 script = ExtResource("2_y2ch2")
 
-[node name="GeneralSkeleton" parent="P03_FIX_ATTEMPT_2/rig" parent_id_path=PackedInt32Array(1921797922, 1047549794) index="0" unique_id=1842819328]
+[node name="GeneralSkeleton" parent="SubViewportContainer/SubViewport/P03_FIX_ATTEMPT_2/rig" parent_id_path=PackedInt32Array(1921797922, 1047549794) index="0" unique_id=1842819328]
 bones/1/position = Vector3(-5.0267646e-10, 0.035702743, 0.29104003)
 bones/1/rotation = Quaternion(0.9448699, 7.806918e-08, 2.2527455e-07, 0.3274461)
 bones/1/scale = Vector3(1, 0.99999994, 0.9999999)
@@ -954,15 +972,19 @@ bones/451/scale = Vector3(1, 0.99999976, 0.9999998)
 bones/452/position = Vector3(0, -8.940699e-09, -1.3877788e-16)
 bones/452/rotation = Quaternion(7.450582e-09, 1.776357e-14, -4.852411e-15, 1)
 
-[node name="DM_KasaneTeto_Body" parent="P03_FIX_ATTEMPT_2/rig/GeneralSkeleton" index="0" unique_id=332674596]
+[node name="DM_KasaneTeto_Body" parent="SubViewportContainer/SubViewport/P03_FIX_ATTEMPT_2/rig/GeneralSkeleton" index="0" unique_id=332674596]
 material_override = ExtResource("3_sswr7")
 
-[node name="AnimationPlayer" parent="P03_FIX_ATTEMPT_2" index="1" unique_id=16800545]
+[node name="AnimationPlayer" parent="SubViewportContainer/SubViewport/P03_FIX_ATTEMPT_2" index="1" unique_id=16800545]
 speed_scale = 0.3
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=168700380]
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=168700380]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3, 0, 0)
 projection = 1
 size = 2.0
 
-[editable path="P03_FIX_ATTEMPT_2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1312234577]
+material_override = ExtResource("5_sswr7")
+mesh = SubResource("QuadMesh_qqjg0")
+
+[editable path="SubViewportContainer/SubViewport/P03_FIX_ATTEMPT_2"]
