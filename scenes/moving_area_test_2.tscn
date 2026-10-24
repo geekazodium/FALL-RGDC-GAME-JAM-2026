@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://b5jpr7m71e8o6"]
 
+[ext_resource type="Script" uid="uid://xy6pfbg1b2lc" path="res://scripts/Enemy.gd" id="1_66yri"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2inco"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uu7rs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_66yri"]
 
@@ -15,6 +19,15 @@ shape = SubResource("BoxShape3D_2inco")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=93411771]
 mesh = SubResource("BoxMesh_uu7rs")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1032199688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57975197, 0)
+[node name="StaticBody3D" type="Area3D" parent="." unique_id=1479846886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1071701, 0)
+collision_layer = 2
+script = ExtResource("1_66yri")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1906496431]
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1032199688]
 mesh = SubResource("CapsuleMesh_66yri")
+
+[connection signal="body_entered" from="StaticBody3D" to="StaticBody3D" method="_on_body_entered"]

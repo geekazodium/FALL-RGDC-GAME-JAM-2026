@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cc6do0kx18fe1" path="res://scripts/level.gd" id="1_6pt5r"]
 [ext_resource type="PackedScene" uid="uid://dfaso0blphdpi" path="res://scenes/moving_area_test.tscn" id="2_rghpy"]
-[ext_resource type="PackedScene" uid="uid://b5jpr7m71e8o6" path="res://scenes/moving_area_test_2.tscn" id="3_7ahq7"]
-[ext_resource type="PackedScene" uid="uid://cqa5xfuse8dgk" path="res://scenes/bpm_setter_ui.tscn" id="3_uyjid"]
+[ext_resource type="PackedScene" uid="uid://crdwxkj3jxavn" path="res://scenes/moving_area_test_3.tscn" id="4_4lxil"]
+[ext_resource type="Script" uid="uid://d2yc66atexkrn" path="res://scripts/score_manager.gd" id="4_yat0y"]
+[ext_resource type="PackedScene" uid="uid://b1s2ykvac0smg" path="res://scenes/player_test.tscn" id="5_hosqq"]
+[ext_resource type="PackedScene" uid="uid://bfnirymg7fiw5" path="res://scenes/game_ui.tscn" id="6_1uvfc"]
 
 [node name="Game" type="Node3D" unique_id=1568713828]
 
@@ -11,12 +13,20 @@
 script = ExtResource("1_6pt5r")
 areaHolder = NodePath(".")
 BPM = 150
-area_scene = Array[PackedScene]([ExtResource("2_rghpy"), ExtResource("3_7ahq7")])
+area_scene = Array[PackedScene]([ExtResource("4_4lxil"), ExtResource("2_rghpy")])
+
+[node name="Score" type="Node" parent="." unique_id=834111531]
+script = ExtResource("4_yat0y")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=548941266]
-transform = Transform3D(1, 0, 0, 0, 0.97477007, 0.22321141, 0, -0.22321141, 0.97477007, 0, 2.5673826, 3.6499724)
-size = 3.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.048, 6.091)
+projection = 1
+size = 5.0
 
-[node name="AreaLight3D" type="AreaLight3D" parent="Camera3D" unique_id=534807900]
+[node name="Player_Test" parent="." unique_id=2022993622 instance=ExtResource("5_hosqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0194654, 0.7391405, 0)
 
-[node name="BPM Setter UI" parent="." unique_id=2099664311 instance=ExtResource("3_uyjid")]
+[node name="Game UI" parent="." unique_id=1675265441 instance=ExtResource("6_1uvfc")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=658987109]
+transform = Transform3D(0.65736574, -0.35275754, 0.6659072, 0, 0.8836681, 0.46811417, -0.7535718, -0.3077222, 0.5808931, 0, 5.58427, 0)

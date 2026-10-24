@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bfnirymg7fiw5"]
+
+[ext_resource type="Script" uid="uid://isf0plmrgugg" path="res://scripts/game_ui.gd" id="1_yubou"]
+[ext_resource type="PackedScene" uid="uid://cqa5xfuse8dgk" path="res://scenes/bpm_setter_ui.tscn" id="2_rns2u"]
+
+[node name="Game UI" type="Control" unique_id=1675265441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yubou")
+
+[node name="Score" type="Control" parent="." unique_id=1233691220]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreText" type="Label" parent="Score" unique_id=1686444698]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 4.0750003
+anchor_bottom = 1.25
+offset_right = -1.5258789e-05
+text = "HELLO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BPM Setter UI" parent="." unique_id=2099664311 instance=ExtResource("2_rns2u")]
+layout_mode = 1
