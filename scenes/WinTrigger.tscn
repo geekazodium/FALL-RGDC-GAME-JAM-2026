@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://beixk5ryh4d52"]
+
+[ext_resource type="PackedScene" uid="uid://bghqrstyo16p7" path="res://scenes/enemy.tscn" id="1_1hjg0"]
+
+[node name="WinTrigger" unique_id=2125152404 instance=ExtResource("1_1hjg0")]
