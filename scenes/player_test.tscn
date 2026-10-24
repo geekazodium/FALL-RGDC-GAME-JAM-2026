@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b1s2ykvac0smg"]
+
+[ext_resource type="Script" uid="uid://bcd1yxhkymoq1" path="res://scripts/player.gd" id="1_a8v3n"]
+[ext_resource type="Material" uid="uid://c0vsppu0kjv6o" path="res://Hitbox.tres" id="2_fdpfy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(0.7062378, 0.5366821, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+size = Vector3(0.7063675, 0.5449219, 1)
+
+[node name="Player" type="Node3D" unique_id=2022993622]
+script = ExtResource("1_a8v3n")
+
+[node name="Player_Col" type="StaticBody3D" parent="." unique_id=73986676]
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player_Col" unique_id=1059243562]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player_Col" unique_id=137788604]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Scream" type="Area3D" parent="." unique_id=77639946]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Scream" unique_id=1535810398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+debug_color = Color(0.6862745, 0.41960785, 0, 0.69803923)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scream" unique_id=1533974884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90026116, -0.01173462, -0.0002886653)
+material_override = ExtResource("2_fdpfy")
+mesh = SubResource("BoxMesh_yf5fn")
+
+[connection signal="body_entered" from="Scream" to="." method="_on_scream_body_entered"]
+[connection signal="body_exited" from="Scream" to="." method="_on_scream_body_exited"]
