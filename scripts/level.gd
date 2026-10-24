@@ -6,9 +6,7 @@ extends Node3D
 @export var timeSign:int = 4
 @export var area_scene:Array[PackedScene]
 
-
 var bpm = 0
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +19,6 @@ func _ready() -> void:
 		scene.position.y = 0
 		areaHolder.add_child(scene)
 		placement += 8
-		print(scene.position)
 	pass # Replace with function body.
 
 var timePassed = 0;
@@ -49,7 +46,6 @@ func removeArea():
 	var areaToRemove = areaHolder.get_child(0)
 	areaHolder.remove_child(areaToRemove)
 	areaToRemove.free()
-	print("removed")
 
 func spawn_new_area():
 	var rand = randi() % area_scene.size()
