@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FALL-RGDC-GAME-JAM-2026"
-run/main_scene="uid://basqvath51yxo"
+run/main_scene="uid://daenbehw6ihdc"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

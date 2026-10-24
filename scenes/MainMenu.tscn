@@ -9,7 +9,7 @@ length = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D")
+tracks/0/path = NodePath("Explode/SubViewportContainer/SubViewport/Camera3D2")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 2)
@@ -32,14 +32,14 @@ length = 3.0000000000000004
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D")
+tracks/0/path = NodePath("Explode/SubViewportContainer/SubViewport/Camera3D2")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 2, 1, 1, 2, 0, 0)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D")
+tracks/1/path = NodePath("Explode/SubViewportContainer/SubViewport/Camera3D2")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0, 0.70710677, 0, 0.70710677)
@@ -99,11 +99,12 @@ size_flags_vertical = 6
 theme_override_font_sizes/font_size = 30
 text = "Begin"
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=89907497]
+[node name="Explode" parent="." unique_id=1869451709 instance=ExtResource("2_0ykhv")]
+
+[node name="Camera3D2" type="Camera3D" parent="Explode/SubViewportContainer/SubViewport" parent_id_path=PackedInt32Array(1869451709, 383648612) index="3" unique_id=89907497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 projection = 1
-
-[node name="Explode" parent="." unique_id=1869451709 instance=ExtResource("2_0ykhv")]
+current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=627164596]
 libraries/ = SubResource("AnimationLibrary_ow34m")
@@ -113,3 +114,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 mesh = SubResource("BoxMesh_7o0as")
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/BeginButton" to="." method="_on_begin_button_pressed"]
+
+[editable path="Explode"]
+[editable path="Explode/SubViewportContainer/SubViewport/P03_FIX_ATTEMPT_2"]
