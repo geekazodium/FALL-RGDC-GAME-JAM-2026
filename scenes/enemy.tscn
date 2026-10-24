@@ -11,14 +11,14 @@ collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_7p1mj")
 
-[node name="StaticBody3D" type="Area3D" parent="." unique_id=393092527]
+[node name="Hixbox" type="Area3D" parent="." unique_id=393092527]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6335274, 0)
 collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=956535012]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hixbox" unique_id=956535012]
 shape = SubResource("SphereShape3D_yf5fn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" unique_id=151520101]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hixbox/CollisionShape3D" unique_id=151520101]
 mesh = SubResource("SphereMesh_g4v7s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=64253077]
@@ -28,4 +28,4 @@ shape = SubResource("SphereShape3D_yf5fn")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1979312584]
 mesh = SubResource("SphereMesh_g4v7s")
 
-[connection signal="body_entered" from="StaticBody3D" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Hixbox" to="." method="_on_body_entered"]
