@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://odnxywbhgt1r"]
+
+[ext_resource type="Script" uid="uid://bxuu7myirrqyx" path="res://scenes/editor/level_builder.gd" id="1_qou4g"]
+[ext_resource type="Texture2D" uid="uid://c0qdfsg6gwr60" path="res://icon.svg" id="2_10ckh"]
+[ext_resource type="Script" uid="uid://8d35s3ndi3uv" path="res://scenes/editor/tempo_flag.gd" id="2_xvd7t"]
+[ext_resource type="Script" uid="uid://blka1moj5shdf" path="res://scenes/editor/note.gd" id="4_t7rvg"]
+
+[node name="LevelBuilder" type="Node2D" unique_id=504064746]
+script = ExtResource("1_qou4g")
+
+[node name="TempoFlag" type="Sprite2D" parent="." unique_id=1274045210]
+scale = Vector2(0.1, 1)
+texture = ExtResource("2_10ckh")
+script = ExtResource("2_xvd7t")
+new_tempo_bpm = 120.0
+metadata/_custom_type_script = "uid://8d35s3ndi3uv"
+
+[node name="TempoFlag2" type="Sprite2D" parent="." unique_id=350620207]
+position = Vector2(512, 0)
+scale = Vector2(0.1, 1)
+texture = ExtResource("2_10ckh")
+script = ExtResource("2_xvd7t")
+new_tempo_bpm = 130.0
+metadata/_custom_type_script = "uid://8d35s3ndi3uv"
+
+[node name="TempoFlag3" type="Sprite2D" parent="." unique_id=660420812]
+position = Vector2(1024, 0)
+scale = Vector2(0.1, 1)
+texture = ExtResource("2_10ckh")
+script = ExtResource("2_xvd7t")
+new_tempo_bpm = 150.0
+metadata/_custom_type_script = "uid://8d35s3ndi3uv"
+
+[node name="TempoFlag4" type="Sprite2D" parent="." unique_id=188198136]
+position = Vector2(1158.4, 0)
+scale = Vector2(0.1, 1)
+texture = ExtResource("2_10ckh")
+script = ExtResource("2_xvd7t")
+metadata/_custom_type_script = "uid://8d35s3ndi3uv"
+
+[node name="Note" type="Sprite2D" parent="." unique_id=1462387737]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(96, -31.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_10ckh")
+script = ExtResource("4_t7rvg")
+metadata/_custom_type_script = "uid://blka1moj5shdf"
+
+[node name="Note2" type="Sprite2D" parent="." unique_id=1806394866]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(224, 31.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_10ckh")
+script = ExtResource("4_t7rvg")
+metadata/_custom_type_script = "uid://blka1moj5shdf"
+
+[node name="Note5" type="Sprite2D" parent="." unique_id=1006611145]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(576, -31.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_10ckh")
+script = ExtResource("4_t7rvg")
+metadata/_custom_type_script = "uid://blka1moj5shdf"
+
+[node name="Note6" type="Sprite2D" parent="." unique_id=302099384]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(512, -31.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_10ckh")
+script = ExtResource("4_t7rvg")
+metadata/_custom_type_script = "uid://blka1moj5shdf"
+
+[node name="Note7" type="Sprite2D" parent="." unique_id=1208615353]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(608, 31.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_10ckh")
+script = ExtResource("4_t7rvg")
+metadata/_custom_type_script = "uid://blka1moj5shdf"
+
+[node name="Note3" type="Sprite2D" parent="." unique_id=1167741497]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(352, -31.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_10ckh")
+script = ExtResource("4_t7rvg")
+metadata/_custom_type_script = "uid://blka1moj5shdf"
+
+[node name="Note4" type="Sprite2D" parent="." unique_id=402192413]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(384, 31.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_10ckh")
+script = ExtResource("4_t7rvg")
+metadata/_custom_type_script = "uid://blka1moj5shdf"
