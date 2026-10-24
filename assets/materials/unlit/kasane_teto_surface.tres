@@ -7,3 +7,6 @@
 render_priority = 0
 shader = ExtResource("1_cbr2e")
 shader_parameter/MainTexture = ExtResource("2_dds5i")
+shader_parameter/Chromakey = Color(0, 0, 0, 1)
+shader_parameter/ChromaReplace = Color(0, 0, 0, 1)
+shader_parameter/ChromaThreashold = -1.0
