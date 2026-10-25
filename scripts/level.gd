@@ -2,7 +2,7 @@ extends Node3D
 
 @export var BPM:int = 120
 @export var timeSign:int = 4
-@export var enemyPoolSize : int = 12
+@export var enemyPoolSize : int = 20
 @export var enemyScene : String
 @export var levelArray : PackedVector2Array
 @export var enemySpawnTime : float = 5
@@ -15,6 +15,9 @@ var enemies : Array[Enemy]
 var enemyTotal : int
 var activeEnemies : Array[Enemy]
 var aliveEnemies : Array[Enemy]
+
+var cooldown : float = 1
+var onCooldown : bool = false
 
 @export var soundPlayer:AudioStreamPlayer3D
 
@@ -75,20 +78,27 @@ func _process(delta: float) -> void:
 	var firstAliveEnemyIndex = activeEnemies.size() - aliveEnemies.size()
 	if(levelArray.size() - firstAliveEnemyIndex != 0):
 		if(levelArray[firstAliveEnemyIndex].y > timePassed):
-			if Input.is_action_just_pressed("scream_1") && levelArray[firstAliveEnemyIndex].x == 1 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
-				if soundPlayer.playing: soundPlayer.stop()
-				soundPlayer.stream = scream1
-				soundPlayer.play()
-				enemyDied()
-			if Input.is_action_just_pressed("scream_2") && levelArray[firstAliveEnemyIndex].x == 2 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
-				if soundPlayer.playing: soundPlayer.stop()
-				soundPlayer.stream = scream2
-				soundPlayer.play()
-				enemyDied()
+			if Input.is_action_just_pressed("scream_1") && !onCooldown:
+				player.Scream1()
+				if levelArray[firstAliveEnemyIndex].x == 1 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
+					if soundPlayer.playing: soundPlayer.stop()
+					soundPlayer.stream = scream1
+					soundPlayer.play()
+					enemyDied()
+				else:
+					Cooldown()
+			if Input.is_action_just_pressed("scream_2") && !onCooldown:
+				player.Scream2()
+				if levelArray[firstAliveEnemyIndex].x == 2 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
+					if soundPlayer.playing: soundPlayer.stop()
+					soundPlayer.stream = scream2
+					soundPlayer.play()
+					enemyDied()
+				else:
+					Cooldown()
 		else:
 			gameLose()
-	elif(!won):
-		won = true
+	else:
 		gameWin()
 	
 
@@ -101,9 +111,13 @@ func gameLose():
 	get_tree().change_scene_to_file("res://scenes/3DGameOver.tscn")
 
 func gameWin():
-	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_file("res://scenes/3DWinScreen.tscn")
 	
 func enemyDied():
 	aliveEnemies[0].stun()
 	aliveEnemies.remove_at(0)
+
+func Cooldown():
+	onCooldown = true
+	await get_tree().create_timer(cooldown).timeout
+	onCooldown = false
