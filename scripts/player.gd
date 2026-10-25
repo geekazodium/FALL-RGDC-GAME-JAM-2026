@@ -11,10 +11,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("scream_1"):
-		Scream1()
-	if Input.is_action_just_pressed("scream_2"):
-		Scream2()
+	#if Input.is_action_just_pressed("scream_1"):
+		#Scream1()
+	#if Input.is_action_just_pressed("scream_2"):
+		#Scream2()
+		pass
 
 func Scream1() -> void:
 	if !screaming:
@@ -29,7 +30,6 @@ func Scream2() -> void:
 		screaming = true
 	
 func cooldown_over() -> void:
-	print("run called")
 	if screaming:
 		#animplayer.play("rig|run")
 		screaming = false
