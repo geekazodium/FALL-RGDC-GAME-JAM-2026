@@ -3,6 +3,7 @@ class_name Enemy
 
 @export var boneRoot : PhysicalBoneSimulator3D
 @export var player : AnimationPlayer
+@onready var mesh : MeshInstance3D = %DM_KasaneTeto_Body
 
 var isStunned = false
 # Called when the node enters the scene tree for the first time.

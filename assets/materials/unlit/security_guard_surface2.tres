@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://be2mpd3d0xkis"]
+
+[ext_resource type="Shader" uid="uid://da3y48ga1rils" path="res://assets/materials/unlit/unlit_albedo.gdshader" id="1_7og8j"]
+[ext_resource type="Texture2D" uid="uid://cul5lcpyohihp" path="res://assets/materials/unlit/security_guard_layout.png" id="2_sd6ig"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7og8j")
+shader_parameter/MainTexture = ExtResource("2_sd6ig")
+shader_parameter/Chromakey = Color(0.3254902, 0.5019608, 0.6627451, 1)
+shader_parameter/ChromaReplace = Color(0.05880268, 0.092868514, 0.99999994, 1)
+shader_parameter/ChromaThreashold = 0.2
