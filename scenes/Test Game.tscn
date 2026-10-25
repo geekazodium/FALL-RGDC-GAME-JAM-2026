@@ -73,6 +73,9 @@ current = true
 fov = 80.0
 far = 40.0
 script = ExtResource("8_1uvfc")
+shock_force = 0.01
+restore_rate = 7.0
+idle_threashold = 0.005
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport" unique_id=2056829253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5110264, 0.44769388, -0.15256831)
