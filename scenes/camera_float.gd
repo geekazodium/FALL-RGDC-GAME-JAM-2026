@@ -7,6 +7,9 @@ var originalQuaternion: Quaternion;
 @export var shock_force: float;
 @export var restore_rate: float;
 @export var idle_threashold: float;
+@export var hit_shock_force: float;
+
+static var shock_apply: bool = false;
 
 func apply_shock(p: Vector3, q: Quaternion) -> void:
 	self.quaternion *= q;
@@ -27,5 +30,8 @@ func _process(delta: float) -> void:
 	var lerp_factor: float = 1. - exp(-delta * restore_rate);
 	self.global_position = lerp(self.global_position, self.originalPosition, lerp_factor);
 	self.quaternion = self.quaternion.slerp(self.originalQuaternion, lerp_factor);
+	if shock_apply:
+		self.apply_random_shock(self.hit_shock_force);
+		shock_apply = false;
 	if self.originalPosition.distance_to(self.global_position) <= self.idle_threashold:
 		self.apply_random_shock(self.shock_force);

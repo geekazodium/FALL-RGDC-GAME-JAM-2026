@@ -27,4 +27,5 @@ func unstun():
 		player.play("rig|run")
 
 func ragdoll():
+	FloatingCamera.shock_apply = true;
 	boneRoot.physical_bones_start_simulation()
