@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve" id="Curve_sqbfm"]
 bake_resolution = 32
-_data = [Vector2(0, 0), 0.0, 5.7677903, 0, 0, Vector2(0.16969697, 1), 0.0, 0.0, 0, 0, Vector2(0.5448276, 0.68539333), -1.7656498, -1.7656498, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 5.7677903, 0, 0, Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.7263681, 1), -1.7656498, -1.7656498, 0, 0, Vector2(0.9502488, 1), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_4i2fg"]
@@ -25,8 +25,8 @@ in_3d_space = true
 [resource]
 render_priority = 0
 shader = ExtResource("1_4i2fg")
-shader_parameter/color = Color(0.8151849, 0, 0.27332726, 1)
-shader_parameter/time = 0.0
+shader_parameter/color = Color(0.46250993, 0.551847, 0.880128, 1)
+shader_parameter/time = 0.7876537037037039
 shader_parameter/time_factor = 1.0
 shader_parameter/brightness = SubResource("CurveTexture_4i2fg")
 shader_parameter/main_texture_gamma = 1.0

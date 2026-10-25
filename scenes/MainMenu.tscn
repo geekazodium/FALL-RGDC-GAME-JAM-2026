@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://sehjdnt5xvrg" path="res://scripts/main_menu.gd" id="1_yqorp"]
 [ext_resource type="PackedScene" uid="uid://ki0fb7h1g75v" path="res://scenes/characters/teto_anim_test.tscn" id="2_0ykhv"]
 [ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_2wh52"]
+[ext_resource type="FontFile" uid="uid://b1bfung1iyu08" path="res://yoster.ttf" id="3_ow34m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ykhv"]
 albedo_color = Color(0, 0, 0, 1)
@@ -87,6 +88,7 @@ alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VBoxContainer" unique_id=509668435]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_ow34m")
 theme_override_font_sizes/normal_font_size = 50
 text = "TETO SCIENTOLOGY SPEEDRUN"
 horizontal_alignment = 1
@@ -96,6 +98,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_ow34m")
 theme_override_font_sizes/font_size = 30
 text = "Begin"
 

@@ -4,11 +4,7 @@ extends Node3D
 
 @export var BPM:int = 120
 @export var timeSign:int = 4
-@export var levelArray : PackedVector2Array
-@export var hitTime : float = 1
-@export var enemyScene : String
-@export var enemyPoolSize : int = 6
-@export var enemySpawnTime : float = 10
+@export var area_scene:Array[PackedScene]
 
 var enemies : Array[Enemy]
 var enemyTotal : int
@@ -31,6 +27,7 @@ func _ready() -> void:
 		enemies[i].position = Vector3(100,100,100)
 		enemies[i].rotation.y = -90
 
+var hit = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timePassed += delta

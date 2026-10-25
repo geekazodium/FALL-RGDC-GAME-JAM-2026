@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://vmvw33vtf4rm"]
+
+[ext_resource type="Shader" uid="uid://bb1f3hcpsomjk" path="res://assets/materials/effects/corner_flash_effect.gdshader" id="1_ngtp7"]
+
+[sub_resource type="Curve" id="Curve_sqbfm"]
+bake_resolution = 32
+_data = [Vector2(0, 0), 0.0, 5.7677903, 0, 0, Vector2(0.16969697, 1), 0.0, 0.0, 0, 0, Vector2(0.5448276, 0.68539333), -1.7656498, -1.7656498, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_4i2fg"]
+texture_mode = 1
+curve = SubResource("Curve_sqbfm")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sqbfm"]
+noise_type = 2
+frequency = 0.0724
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4i2fg"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_sqbfm")
+seamless = true
+in_3d_space = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ngtp7")
+shader_parameter/color = Color(0.8151849, 0, 0.27332726, 1)
+shader_parameter/time = 0.06666666666666667
+shader_parameter/time_factor = 1.0
+shader_parameter/brightness = SubResource("CurveTexture_4i2fg")
+shader_parameter/main_texture_gamma = 1.0
+shader_parameter/main_texture = SubResource("NoiseTexture2D_4i2fg")
