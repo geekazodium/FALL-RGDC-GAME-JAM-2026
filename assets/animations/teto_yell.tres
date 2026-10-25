@@ -1893,27 +1893,3 @@ tracks/269/path = NodePath("%GeneralSkeleton:DEF-f_pinky.03.L")
 tracks/269/interp = 1
 tracks/269/loop_wrap = true
 tracks/269/keys = PackedFloat32Array(0, 1, 1.0000001, 1.0000008, 0.9999999, 0.06666667, 1, 1.0000899, 0.99999887, 1.0008638, 0.1, 1, 1.0001347, 1.0082082, 1.0012958, 0.13333334, 1, 1.0001795, 1.0306009, 1.0017277, 0.16666667, 1, 1.0002245, 1.0629737, 1.0069577, 0.2, 1, 1.0002693, 1.0992057, 1.02111, 0.23333333, 1, 1.0003141, 1.131327, 1.0512302, 0.26666668, 1, 1.0003589, 1.1514155, 1.1027116, 0.3, 1, 1.0004039, 1.1547108, 1.1742214, 0.33333334, 1, 1.0004487, 1.1424522, 1.2554878, 0.36666667, 1, 1.0004935, 1.1220776, 1.3306154, 0.4, 1, 1.0005385, 1.1038861, 1.3840011, 0.43333334, 1, 1.0005833, 1.096521, 1.4038293)
-tracks/270/type = "value"
-tracks/270/imported = false
-tracks/270/enabled = true
-tracks/270/path = NodePath("rig/GeneralSkeleton/SM_Mic:visible")
-tracks/270/interp = 1
-tracks/270/loop_wrap = true
-tracks/270/keys = {
-"times": PackedFloat32Array(0.15667807, 0.23771845),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/271/type = "value"
-tracks/271/imported = false
-tracks/271/enabled = true
-tracks/271/path = NodePath("rig/OneshotEffectEmitter:emitting")
-tracks/271/interp = 1
-tracks/271/loop_wrap = true
-tracks/271/keys = {
-"times": PackedFloat32Array(0.14587268, 0.23333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}

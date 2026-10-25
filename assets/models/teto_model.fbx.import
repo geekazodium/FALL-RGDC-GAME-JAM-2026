@@ -4157,7 +4157,7 @@ _subresources={
 "materials": {
 "M_KasaneTeto": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/materials/teto/teto_surface.tres",
+"use_external/fallback_path": "res://assets/materials/unlit/kasane_teto_surface.tres",
 "use_external/path": "uid://dgqjo12pus8rn"
 }
 },

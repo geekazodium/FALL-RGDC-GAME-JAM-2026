@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ki0fb7h1g75v" path="res://scenes/characters/teto_anim_test.tscn" id="2_0ykhv"]
 [ext_resource type="PackedScene" uid="uid://sqskgqjmxcpt" path="res://scenes/Test Game.tscn" id="2_ow34m"]
 [ext_resource type="FontFile" uid="uid://b1bfung1iyu08" path="res://yoster.ttf" id="3_ow34m"]
+[ext_resource type="PackedScene" uid="uid://c8erw47uf5tob" path="res://scenes/donttouch/window_breakable.tscn" id="5_l72w3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ykhv"]
 albedo_color = Color(0, 0, 0, 1)
@@ -126,6 +127,9 @@ mesh = SubResource("BoxMesh_7o0as")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 projection = 1
 current = true
+
+[node name="window2" parent="Explode" unique_id=1860067738 instance=ExtResource("5_l72w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46853897, -0.10324749, -0.0077672964)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=627164596]
 libraries/ = SubResource("AnimationLibrary_ow34m")

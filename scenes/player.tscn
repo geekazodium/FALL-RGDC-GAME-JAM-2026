@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://218hehes6h5w"]
+
+[ext_resource type="PackedScene" uid="uid://ph6sbsx30kb1" path="res://scenes/characters/teto.tscn" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bcd1yxhkymoq1" path="res://scripts/player.gd" id="2_g2els"]
+
+[node name="teto_updated" unique_id=1932178894 instance=ExtResource("1_g2els")]
+script = ExtResource("2_g2els")
+
+[node name="GeneralSkeleton" parent="rig" parent_id_path=PackedInt32Array(885615140) index="1" unique_id=1788681272]
+bones/1/position = Vector3(-3.770074e-10, 0.01235394, 0.2500234)
+bones/10/position = Vector3(0, -0.015171754, -0.055762388)
+bones/23/rotation = Quaternion(0.98169243, 0.004086778, -0.012003788, 0.19005087)
+bones/23/scale = Vector3(0.98098844, 0.9809887, 0.98098844)
+bones/24/rotation = Quaternion(0.17459832, 0.8137973, -0.2834255, 0.4763606)
+bones/25/rotation = Quaternion(0.014173332, -0.043911945, 0.036893126, 0.99825335)
+bones/42/position = Vector3(-0.0014011961, -0.032316305, -0.03904138)
+bones/42/rotation = Quaternion(-0.12661242, 0.91489124, -0.09942554, 0.37021342)
+bones/43/rotation = Quaternion(0.027440827, 0.037617575, -0.023643415, 0.99863553)
+bones/54/rotation = Quaternion(0.69661033, -0.0032400943, 0.0074591674, 0.7174037)
+bones/54/scale = Vector3(0.95787925, 0.9578794, 0.9578793)
+bones/55/rotation = Quaternion(-0.08374914, 0.85210896, -0.12847698, -0.50039005)
+bones/56/rotation = Quaternion(-0.17365678, 0.12750801, -0.3314416, 0.91854864)
+bones/61/rotation = Quaternion(0.23111401, -0.6175523, 0.18578534, 0.7284911)
+bones/73/position = Vector3(-0.005575573, -0.0008717403, -0.03993229)
+bones/73/rotation = Quaternion(0.060387693, 0.95343465, 0.058356106, -0.28967288)
+bones/74/rotation = Quaternion(0.16372728, -0.18387772, -0.15234405, 0.95716965)
+bones/85/rotation = Quaternion(0.9710656, 0.03430506, 0.14455374, 0.18697348)
+bones/85/scale = Vector3(1.0090119, 0.9809886, 1.0090119)
+bones/86/rotation = Quaternion(1.39158605e-08, -0.07884659, -1.9096852e-08, 0.99688685)
+bones/87/rotation = Quaternion(0.2487161, -0.0783769, 0.01979975, 0.9651971)
+bones/87/scale = Vector3(1.0003489, 0.99326426, 1.0067459)
+bones/88/rotation = Quaternion(-8.6894625e-09, 0.07697834, -1.457438e-08, 0.99703276)
+bones/89/rotation = Quaternion(-0.5742613, -0.05261413, -0.036347657, 0.8161707)
+bones/89/scale = Vector3(0.99117255, 0.99338424, 1.0157918)
+bones/92/rotation = Quaternion(0.68938506, -0.11413228, -0.10034856, 0.7082741)
+bones/92/scale = Vector3(1.0217503, 0.9578793, 1.0217505)
+bones/93/rotation = Quaternion(-1.8436657e-08, 0.068204455, -9.1031066e-10, 0.99767137)
+bones/94/rotation = Quaternion(0.6166287, 0.06744018, -0.053594057, 0.782527)
+bones/94/scale = Vector3(1.0011132, 0.93774456, 1.0655677)
+bones/95/rotation = Quaternion(-4.567687e-08, -0.07498826, -2.5892996e-08, 0.9971845)
+bones/96/rotation = Quaternion(-0.6864901, 0.048055004, 0.04645477, 0.7240608)
+bones/96/scale = Vector3(0.9777328, 0.97704107, 1.0474168)
+bones/371/rotation = Quaternion(-0.36258033, 0.76250607, 0.045963377, 0.53386086)
+bones/371/scale = Vector3(0.9998344, 1.0003316, 0.9998345)
+bones/372/rotation = Quaternion(3.8840287e-09, -0.037396796, -3.8892245e-09, 0.9993006)
+bones/373/rotation = Quaternion(0.20321953, -0.037827738, 0.007859967, 0.9783706)
+bones/374/rotation = Quaternion(7.872692e-08, 0.15150425, 5.674819e-08, 0.9884566)
+bones/375/rotation = Quaternion(-0.12718691, 0.15077475, 0.00035686695, 0.98035216)
+bones/375/scale = Vector3(1.0001816, 0.99967164, 1.0001483)
+bones/411/rotation = Quaternion(-0.36647052, -0.7750538, -0.10831554, 0.5032483)
+bones/411/scale = Vector3(1.0011733, 0.9976577, 1.0011731)
+bones/412/rotation = Quaternion(-2.761464e-07, 0.051280625, -3.5412975e-07, 0.9986843)
+bones/413/rotation = Quaternion(0.26798698, 0.05125842, -0.0142488135, 0.96195245)
+bones/413/scale = Vector3(1.0001214, 0.9988205, 1.0010644)
+bones/414/rotation = Quaternion(-3.7077592e-07, -0.15317938, -3.999833e-07, 0.9881984)
+bones/415/rotation = Quaternion(-0.117324635, -0.15242799, 0.051649798, 0.9799658)
+bones/415/scale = Vector3(0.9987803, 1.0023406, 0.99888587)
+
+[node name="ScreamCDTimer" type="Timer" parent="." index="3" unique_id=882444532]
+wait_time = 0.2
+one_shot = true
