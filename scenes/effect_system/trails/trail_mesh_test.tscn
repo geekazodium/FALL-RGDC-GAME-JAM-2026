@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c8dciotu50fo7" path="res://scenes/effect_system/trails/trail_mesh_automatic.tscn" id="1_euo7j"]
 [ext_resource type="Shader" uid="uid://4gdbanl6t3a6" path="res://scenes/effect_system/trails/trail_shader.gdshader" id="2_640xh"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x00s6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6q0d"]
 render_priority = 0
 shader = ExtResource("2_640xh")
 shader_parameter/finite_difference_step = 0.1
@@ -41,6 +41,6 @@ transform = Transform3D(0.6115823, 0, -0.79118073, 0, 1, 0, 0.79118073, 0, 0.611
 
 [node name="TrailMesh" parent="Node3D" unique_id=1927427758 instance=ExtResource("1_euo7j")]
 transform = Transform3D(-0.32220626, 0.29747897, 1.601028, 1.6170176, -0.1344321, 0.35040238, 0.19244987, 1.6275853, -0.26368302, 0.09394196, 0.11289096, -0.6698175)
-material_override = SubResource("ShaderMaterial_x00s6")
+material_override = SubResource("ShaderMaterial_i6q0d")
 mesh = SubResource("RibbonTrailMesh_640xh")
 skeleton = NodePath("../..")

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://vsam0ibvisyw" path="res://scenes/effect_system/trails/trail_mesh.gd" id="2_hnwvl"]
 [ext_resource type="Script" uid="uid://dkcr0ecwrah47" path="res://scenes/effect_system/trails/global_movement_trail.gd" id="3_k7wml"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrwfi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjd63"]
 render_priority = 0
 shader = ExtResource("1_dmcjl")
 shader_parameter/finite_difference_step = 0.05
@@ -20,14 +20,14 @@ shape = 0
 size = 0.2
 section_segments = 5
 
-[node name="AutoTrailMesh" type="MeshInstance3D"]
+[node name="AutoTrailMesh" type="MeshInstance3D" unique_id=776514389]
 process_priority = 10
-material_override = SubResource("ShaderMaterial_xrwfi")
+material_override = SubResource("ShaderMaterial_vjd63")
 cast_shadow = 2
 mesh = SubResource("RibbonTrailMesh_640xh")
 script = ExtResource("2_hnwvl")
 color = Color(3.6291957, 3.6291957, 3.6291957, 1)
 metadata/_custom_type_script = "uid://vsam0ibvisyw"
 
-[node name="GlobalMovementTrail" type="Node" parent="."]
+[node name="GlobalMovementTrail" type="Node" parent="." unique_id=297696977]
 script = ExtResource("3_k7wml")

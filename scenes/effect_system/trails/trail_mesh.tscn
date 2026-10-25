@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2sggus755dbc"]
 
-[ext_resource type="Shader" path="res://scenes/effects/trails/trail_shader.gdshader" id="1_48g2g"]
-[ext_resource type="Script" path="res://scenes/effects/trails/trail_mesh.gd" id="2_p5cdq"]
+[ext_resource type="Shader" uid="uid://b4fx14cm5sx0t" path="res://scenes/effect_system/trails/trail_shader_material.tres" id="1_48g2g"]
+[ext_resource type="Script" uid="uid://vsam0ibvisyw" path="res://scenes/effect_system/trails/trail_mesh.gd" id="2_p5cdq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vdyda"]
 render_priority = 0

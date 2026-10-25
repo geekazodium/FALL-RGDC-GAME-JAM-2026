@@ -8,13 +8,13 @@
 [node name="teto_model" unique_id=782149683 instance=ExtResource("1_3vyb7")]
 script = ExtResource("2_g2els")
 
-[node name="OneshotEffectEmitter" type="Node3D" parent="rig" parent_id_path=PackedInt32Array(1041376959) index="0" unique_id=2095614667]
+[node name="OneshotEffectEmitter" type="Node3D" parent="rig" parent_id_path=PackedInt32Array(885615140) index="0" unique_id=2095614667]
 transform = Transform3D(-1, 0, -8.742278e-08, -8.7422734e-08, -1.1920929e-07, 0.99999964, -1.0421603e-14, 0.99999964, 1.1920929e-07, 0, -0.08202658, 0.38279057)
 script = ExtResource("3_dqkch")
 effect = ExtResource("4_qlg0r")
 metadata/_custom_type_script = "uid://dmgsdkbhpu7vn"
 
-[node name="GeneralSkeleton" parent="rig" parent_id_path=PackedInt32Array(1041376959) index="1" unique_id=693072694]
+[node name="GeneralSkeleton" parent="rig" parent_id_path=PackedInt32Array(885615140) index="1" unique_id=1788681272]
 bones/1/rotation = Quaternion(0.95460033, 7.10224e-08, 2.2759454e-07, 0.29788956)
 bones/5/rotation = Quaternion(0.22994208, 2.072082e-07, 2.6816243e-08, 0.9732043)
 bones/7/rotation = Quaternion(-0.009189483, -7.2962325e-10, -2.8573701e-09, 0.9999578)
@@ -283,5 +283,5 @@ bones/427/rotation = Quaternion(0.0025246837, 0.90161943, 0.03776768, -0.4308709
 bones/434/rotation = Quaternion(0.032053065, 0.8786506, -0.029031327, -0.47550282)
 bones/441/rotation = Quaternion(0.033362098, 0.8608433, -0.100893386, -0.497651)
 
-[node name="SM_Mic" parent="rig/GeneralSkeleton" index="1" unique_id=728041260]
+[node name="SM_Mic" parent="rig/GeneralSkeleton" index="1" unique_id=231959745]
 visible = false

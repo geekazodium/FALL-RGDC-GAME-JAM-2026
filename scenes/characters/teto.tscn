@@ -8,13 +8,13 @@
 [node name="teto_updated" unique_id=1932178894 instance=ExtResource("1_c1r8v")]
 script = ExtResource("2_0dnus")
 
-[node name="OneshotEffectEmitter" type="Node3D" parent="rig" parent_id_path=PackedInt32Array(456252548) index="0" unique_id=2003875512]
+[node name="OneshotEffectEmitter" type="Node3D" parent="rig" parent_id_path=PackedInt32Array(885615140) index="0" unique_id=2003875512]
 transform = Transform3D(-1, 0, -8.742278e-08, -8.742274e-08, -1.1920929e-07, 0.9999997, -1.0421604e-14, 0.9999997, 1.1920929e-07, 0, -0.082026586, 0.3827906)
 script = ExtResource("3_05215")
 effect = ExtResource("4_kfl2y")
 metadata/_custom_type_script = "uid://dmgsdkbhpu7vn"
 
-[node name="GeneralSkeleton" parent="rig" parent_id_path=PackedInt32Array(456252548) index="1" unique_id=1101843348]
+[node name="GeneralSkeleton" parent="rig" parent_id_path=PackedInt32Array(885615140) index="1" unique_id=1788681272]
 bones/1/rotation = Quaternion(0.95460033, 7.10224e-08, 2.2759454e-07, 0.29788956)
 bones/1/scale = Vector3(1, 0.99999994, 0.9999999)
 bones/2/position = Vector3(-4.2076086e-15, 0.04050314, 1.4898293e-09)
