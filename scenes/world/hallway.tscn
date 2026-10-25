@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://e4dut50npjkc"]
+
+[ext_resource type="PackedScene" uid="uid://wd4xwophi62o" path="res://assets/models/hallway.fbx" id="1_8pxkg"]
+
+[node name="hallway" unique_id=1382478893 instance=ExtResource("1_8pxkg")]
+
+[node name="Camera" parent="." index="0" unique_id=1107297628]
+process_mode = 4
+visible = false
+
+[node name="Light" parent="." index="1" unique_id=713202474]
+process_mode = 4
+visible = false
+
+[node name="Plane" parent="." index="2" unique_id=1892966570]
+transform = Transform3D(-4.371139e-08, 0.99999994, 4.3711385e-08, 0, -4.3711385e-08, 0.99999994, 1, 4.3711385e-08, 1.9106853e-15, 0, 0, 0)

@@ -1,0 +1,6 @@
+3d Art: 
+	Thanks to blender, extensions (UCUPaint, rigify)
+	Thanks to Opengameart:
+		https://opengameart.org/content/building-textures-16x16-tiles
+		https://opengameart.org/content/brick-building-set-2-bluebrick1382pxpng
+		https://opengameart.org/content/n64-stair-texture-template-carpetyellowpng

@@ -10,3 +10,4 @@ shader_parameter/MainTexture = ExtResource("2_dds5i")
 shader_parameter/Chromakey = Color(0, 0, 0, 1)
 shader_parameter/ChromaReplace = Color(0, 0, 0, 1)
 shader_parameter/ChromaThreashold = -1.0
+shader_parameter/lightStep = 0.2

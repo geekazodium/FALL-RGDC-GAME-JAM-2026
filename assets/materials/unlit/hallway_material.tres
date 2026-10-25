@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://mribsqhmu5pf"]
+
+[ext_resource type="Shader" uid="uid://bmsr3b0wcgh6b" path="res://assets/materials/unlit/unlit_vertex_wrap.gdshader" id="1_r6uy2"]
+[ext_resource type="Texture2D" uid="uid://us16m4tduksa" path="res://assets/materials/unlit/hallway_albedo.png" id="2_5htck"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_r6uy2")
+shader_parameter/MainTexture = ExtResource("2_5htck")
+shader_parameter/Chromakey = Color(0, 0, 0, 1)
+shader_parameter/ChromaReplace = Color(0, 0, 0, 1)
+shader_parameter/ChromaThreashold = -1.0
+shader_parameter/lightStep = 0.0
+shader_parameter/runSpeed = 0.7
+shader_parameter/offset_dir = Vector3(0, -6, 0)
+shader_parameter/albedo_brightness = 0.5
