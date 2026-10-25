@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://e4dut50npjkc" path="res://scenes/world/hallway.tscn" id="1_0jfsq"]
 [ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="2_pf6pb"]
+[ext_resource type="PackedScene" uid="uid://b6nb2vigpwv3e" path="res://scenes/Game_Over.tscn" id="4_b0evj"]
 [ext_resource type="Script" uid="uid://doiqqd8vgge77" path="res://scenes/camera_float.gd" id="9_dqvaa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
@@ -56,3 +57,5 @@ script = ExtResource("9_dqvaa")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport" unique_id=2056829253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5110264, 0.44769388, -0.15256831)
+
+[node name="GameOver" parent="SubViewportContainer" unique_id=332619268 instance=ExtResource("4_b0evj")]
