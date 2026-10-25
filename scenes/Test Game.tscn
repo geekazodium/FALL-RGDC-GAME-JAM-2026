@@ -67,7 +67,6 @@ transform = Transform3D(-0.52025473, 0.1694226, -0.837037, 0.13827848, 0.9839025
 current = true
 fov = 80.0
 far = 40.0
-script = ExtResource("8_1uvfc")
 
 [node name="Music" type="AudioStreamPlayer3D" parent="." unique_id=2059107723]
 stream = ExtResource("11_mihvs")
