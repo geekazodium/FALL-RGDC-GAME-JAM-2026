@@ -30,9 +30,7 @@ func _ready() -> void:
 var hit = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	speed = bpm * delta
-	timePassed += speed
-	#print("hit " + str((int(timePassed) / timeSign) + 1) + " : " + str((int(timePassed) % timeSign + 1)))
+	timePassed += delta
 	
 	if(levelArray.size() > activeEnemies.size()):
 		if(levelArray[activeEnemies.size()].y - timePassed < enemySpawnTime):
@@ -75,12 +73,8 @@ func setBPM(_bpm):
 	@warning_ignore("integer_division")
 	bps = BPM / 60
 
-func spawn_new_area():
-	var rand = randi() % area_scene.size()
-	var scene = area_scene.get(rand).instantiate()
-	scene.position = Vector3(16, 0, 0)
-	areaHolder.add_child(scene)
-	pass
+func gameLose():
+	print("game lost")
 
 func gameWin():
 	print("game won")
