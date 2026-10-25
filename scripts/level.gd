@@ -16,7 +16,7 @@ var enemyTotal : int
 var activeEnemies : Array[Enemy]
 var aliveEnemies : Array[Enemy]
 
-var cooldown : float = 1
+var cooldown : float = 0.5
 var onCooldown : bool = false
 
 @export var soundPlayer:AudioStreamPlayer3D
