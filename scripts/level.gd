@@ -2,12 +2,13 @@ extends Node3D
 
 @export var BPM:int = 120
 @export var timeSign:int = 4
-@export var enemyPoolSize : int = 20
+@export var enemyPoolSize : int = 12
 @export var enemyScene : String
 @export var levelArray : PackedVector2Array
-@export var enemySpawnTime : float = 10
+@export var enemySpawnTime : float = 5
 @export var hitTime : float = 1
 
+@onready var player : Player = %Player
 
 var enemies : Array[Enemy]
 var enemyTotal : int
@@ -46,7 +47,6 @@ func _process(delta: float) -> void:
 			activeEnemies.append(enemies[enemyIndex])
 			aliveEnemies.append(enemies[enemyIndex])
 			enemies[enemyIndex].position = Vector3(100,0,0)
-			print("enemy placed")
 	
 	var j : int = 0
 	for useless in range(activeEnemies.size()):
@@ -64,10 +64,8 @@ func _process(delta: float) -> void:
 	if(levelArray.size() - firstAliveEnemyIndex != 0):
 		if(levelArray[firstAliveEnemyIndex].y > timePassed):
 			if Input.is_action_just_pressed("scream_1") && levelArray[firstAliveEnemyIndex].x == 1 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
-				print("timing hit")
 				enemyDied()
 			if Input.is_action_just_pressed("scream_2") && levelArray[firstAliveEnemyIndex].x == 2 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
-				print("timing hit")
 				enemyDied()
 		else:
 			gameLose()
