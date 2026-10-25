@@ -72,6 +72,7 @@ _data = {
 }
 
 [node name="MainMenu" type="Node3D" unique_id=1189686588 node_paths=PackedStringArray("AnimPlayer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09009254, -0.11301531, 0.9184765)
 script = ExtResource("1_yqorp")
 playScene = ExtResource("2_ow34m")
 AnimPlayer = NodePath("AnimationPlayer")
@@ -92,6 +93,7 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("3_ow34m")
 theme_override_font_sizes/normal_font_size = 50
 text = "TETO SCIENTOLOGY SPEEDRUN"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -102,6 +104,18 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("3_ow34m")
 theme_override_font_sizes/font_size = 30
 text = "Begin"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1830745235]
+offset_left = 787.0
+offset_top = 462.0
+offset_right = 1065.0
+offset_bottom = 589.0
+theme_override_fonts/normal_font = ExtResource("3_ow34m")
+theme_override_font_sizes/normal_font_size = 25
+text = "F - Scream 1
+J - Scream 2"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Explode" parent="." unique_id=1869451709 instance=ExtResource("2_0ykhv")]
 
