@@ -9,9 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://6hbmahb0ewmx" path="res://assets/sound/scream1.ogg" id="5_koaqe"]
 [ext_resource type="PackedScene" uid="uid://bfnirymg7fiw5" path="res://scenes/game_ui.tscn" id="6_1uvfc"]
 [ext_resource type="PackedScene" uid="uid://e4dut50npjkc" path="res://scenes/world/hallway.tscn" id="7_yat0y"]
-[ext_resource type="Script" uid="uid://doiqqd8vgge77" path="res://scenes/camera_float.gd" id="8_1uvfc"]
 [ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="10_btoap"]
 [ext_resource type="AudioStream" uid="uid://b1gqxbcq10084" path="res://assets/music/ScienTetology_001-consolidated.ogg" id="11_mihvs"]
+[ext_resource type="Script" uid="uid://pj43ke702jps" path="res://scenes/music.gd" id="12_mihvs"]
 
 [node name="Game" type="Node3D" unique_id=1568713828]
 
@@ -26,7 +26,7 @@ stretch_shrink = 3
 mouse_target = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1814872042]
-handle_input_locally = false
+audio_listener_enable_3d = true
 size = Vector2i(385, 240)
 render_target_update_mode = 4
 
@@ -43,12 +43,13 @@ environment = ExtResource("10_btoap")
 transform = Transform3D(-0.7181715, -0.41693947, 0.55712765, 0.6955081, -0.4044057, 0.59390604, -0.022317294, 0.81401336, 0.5804174, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Level" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1423305782 node_paths=PackedStringArray("soundPlayer", "music")]
+[node name="Level" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1423305782 node_paths=PackedStringArray("soundPlayer")]
 script = ExtResource("1_6pt5r")
+enemyPoolSize = 16
 enemyScene = "res://scenes/securityguard.tscn"
+enemySpawnTime = 1.5
 secondMaterial = ExtResource("2_4lxil")
-soundPlayer = NodePath("../../../Sound")
-music = NodePath("../../../Music")
+soundPlayer = NodePath("../Sound")
 scream1 = ExtResource("5_koaqe")
 scream2 = ExtResource("3_flfdl")
 
@@ -66,18 +67,21 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2028340290]
 transform = Transform3D(-0.52025473, 0.1694226, -0.837037, 0.13827848, 0.9839025, 0.1132032, 0.842742, -0.05684971, -0.53530747, -0.15, 0.363, -0.2558982)
 current = true
-shock_force = 0.005
-restore_rate = 7.0
-idle_threashold = 0.003
-hit_shock_force = 0.075
 fov = 80.0
 far = 40.0
+
+[node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D2" unique_id=1130799369]
+current = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport" unique_id=2056829253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5110264, 0.44769388, -0.15256831)
 
-[node name="Music" type="AudioStreamPlayer3D" parent="." unique_id=2059107723]
+[node name="Music" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport" unique_id=2059107723]
 stream = ExtResource("11_mihvs")
+autoplay = true
+max_distance = 4096.0
+script = ExtResource("12_mihvs")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1053853676]
+[node name="Sound" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport" unique_id=1053853676]
 volume_db = -25.0
+max_distance = 10.0

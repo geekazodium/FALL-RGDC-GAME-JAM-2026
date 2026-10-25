@@ -21,8 +21,6 @@ var onCooldown : bool = false
 
 @export var soundPlayer:AudioStreamPlayer3D
 
-@export var music:AudioStreamPlayer3D
-
 @export var scream1:AudioStream
 @export var scream2:AudioStream
 
@@ -43,7 +41,6 @@ func _ready() -> void:
 		add_child(enemies[i])
 		enemies[i].position = Vector3(100,100,100)
 		enemies[i].rotation.y = -90
-	music.play(0)
 	levelArray = levelBuilder.generate_level_data()
 	levelBuilder.queue_free()
 
