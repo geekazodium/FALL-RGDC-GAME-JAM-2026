@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://2uuc8xnrr36o"]
+
+[ext_resource type="PackedScene" uid="uid://e4dut50npjkc" path="res://scenes/world/hallway.tscn" id="1_immr1"]
+[ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="2_hu1uy"]
+[ext_resource type="PackedScene" uid="uid://218hehes6h5w" path="res://scenes/player.tscn" id="4_yd7kw"]
+[ext_resource type="PackedScene" uid="uid://oi6a2bpwexal" path="res://scenes/WinScreen.tscn" id="5_immr1"]
+[ext_resource type="Script" uid="uid://doiqqd8vgge77" path="res://scenes/camera_float.gd" id="5_kswib"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
+size = Vector3(20, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ka5s"]
+size = Vector3(20, 0.1, 2)
+
+[node name="Game" type="Node3D" unique_id=1568713828]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1877544355]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+mouse_target = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1814872042]
+handle_input_locally = false
+size = Vector2i(385, 240)
+render_target_update_mode = 4
+
+[node name="hallway" parent="SubViewportContainer/SubViewport" unique_id=1382478893 instance=ExtResource("1_immr1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -0.2868982)
+
+[node name="hallway2" parent="SubViewportContainer/SubViewport" unique_id=1197408403 instance=ExtResource("1_immr1")]
+transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.7, 0, 0.13511753)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1437734522]
+environment = ExtResource("2_hu1uy")
+
+[node name="floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=2011291205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0492599, -0.1888982)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/floor" unique_id=70070201]
+mesh = SubResource("BoxMesh_7o0as")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/floor" unique_id=1146728484]
+shape = SubResource("BoxShape3D_1ka5s")
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=782149683 instance=ExtResource("4_yd7kw")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0.10892251)
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2028340290]
+transform = Transform3D(-0.52025473, 0.1694226, -0.837037, 0.13827848, 0.9839025, 0.1132032, 0.842742, -0.05684971, -0.53530747, -0.15, 0.363, -0.2558982)
+current = true
+fov = 80.0
+far = 40.0
+script = ExtResource("5_kswib")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport" unique_id=2056829253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5110264, 0.44769388, -0.15256831)
+
+[node name="Control" parent="SubViewportContainer" unique_id=1827753879 instance=ExtResource("5_immr1")]
+layout_mode = 2

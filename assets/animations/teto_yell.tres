@@ -2,7 +2,7 @@
 
 [resource]
 resource_name = "rig|YELL"
-length = 0.8
+length = 0.43333333333333335
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
