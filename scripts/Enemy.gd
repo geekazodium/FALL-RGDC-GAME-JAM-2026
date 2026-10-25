@@ -1,12 +1,13 @@
-extends MeshInstance3D
+extends Node3D
 class_name Enemy
 
 @export var boneRoot : PhysicalBoneSimulator3D
+@export var player : AnimationPlayer
 
 var isStunned = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	player.play("rig|run")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,8 +16,14 @@ func _process(delta: float) -> void:
 func stun():
 	if not isStunned:
 		isStunned = true
-		print("Hit by Player")
 		ragdoll()
+		player.stop()
+
+func unstun():
+	if isStunned:
+		isStunned = false
+		boneRoot.physical_bones_stop_simulation()
+		player.play("rig|run")
 
 func ragdoll():
 	boneRoot.physical_bones_start_simulation()
