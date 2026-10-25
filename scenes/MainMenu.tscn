@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://sehjdnt5xvrg" path="res://scripts/main_menu.gd" id="1_yqorp"]
 [ext_resource type="PackedScene" uid="uid://ki0fb7h1g75v" path="res://scenes/characters/teto_anim_test.tscn" id="2_0ykhv"]
-[ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_2wh52"]
+[ext_resource type="PackedScene" uid="uid://sqskgqjmxcpt" path="res://scenes/Test Game.tscn" id="2_ow34m"]
 [ext_resource type="FontFile" uid="uid://b1bfung1iyu08" path="res://yoster.ttf" id="3_ow34m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ykhv"]
@@ -71,8 +71,9 @@ _data = {
 }
 
 [node name="MainMenu" type="Node3D" unique_id=1189686588 node_paths=PackedStringArray("AnimPlayer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09009254, -0.11301531, 0.9184765)
 script = ExtResource("1_yqorp")
-playScene = ExtResource("2_2wh52")
+playScene = ExtResource("2_ow34m")
 AnimPlayer = NodePath("AnimationPlayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1723734930]

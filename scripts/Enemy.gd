@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 class_name Enemy
 
 @export var boneRoot : PhysicalBoneSimulator3D
