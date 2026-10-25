@@ -4,6 +4,7 @@ class_name Enemy
 @export var boneRoot : PhysicalBoneSimulator3D
 @export var player : AnimationPlayer
 @onready var mesh : MeshInstance3D = %DM_KasaneTeto_Body
+@onready var hitVFX : GPUParticles3D = $HitVfx
 
 var isStunned = false
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +17,7 @@ func _process(delta: float) -> void:
 
 func stun():
 	if not isStunned:
+		hitVFX.emitting = true
 		isStunned = true
 		#ragdoll()
 		player.stop()

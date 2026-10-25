@@ -52,13 +52,14 @@ func _process(delta: float) -> void:
 		if(levelArray[activeEnemies.size()].y - timePassed < enemySpawnTime):
 			var enemyIndex = enemyTotal % enemyPoolSize
 			enemyTotal += 1
-			activeEnemies.append(enemies[enemyIndex])
-			aliveEnemies.append(enemies[enemyIndex])
-			enemies[enemyIndex].position = Vector3(100,0,0)
 			if(levelArray[activeEnemies.size()].x == 1):
 				enemies[enemyIndex].mesh.material_override = null
 			else:
 				enemies[enemyIndex].mesh.material_override = secondMaterial
+			activeEnemies.append(enemies[enemyIndex])
+			aliveEnemies.append(enemies[enemyIndex])
+			enemies[enemyIndex].position = Vector3(100,0,0)
+			
 	
 	var j : int = 0
 	for useless in range(activeEnemies.size()):
