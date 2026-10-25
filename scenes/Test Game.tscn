@@ -3,12 +3,15 @@
 [ext_resource type="Script" uid="uid://cc6do0kx18fe1" path="res://scripts/level.gd" id="1_6pt5r"]
 [ext_resource type="Material" uid="uid://be2mpd3d0xkis" path="res://assets/materials/unlit/security_guard_surface2.tres" id="2_4lxil"]
 [ext_resource type="PackedScene" uid="uid://odnxywbhgt1r" path="res://scenes/editor/level_builder.tscn" id="2_7ahq7"]
+[ext_resource type="AudioStream" uid="uid://cqbm1m83ipigj" path="res://assets/sound/Scream2.ogg" id="3_flfdl"]
 [ext_resource type="Script" uid="uid://d2yc66atexkrn" path="res://scripts/score_manager.gd" id="4_yat0y"]
 [ext_resource type="PackedScene" uid="uid://218hehes6h5w" path="res://scenes/player.tscn" id="5_hosqq"]
+[ext_resource type="AudioStream" uid="uid://6hbmahb0ewmx" path="res://assets/sound/scream1.ogg" id="5_koaqe"]
 [ext_resource type="PackedScene" uid="uid://bfnirymg7fiw5" path="res://scenes/game_ui.tscn" id="6_1uvfc"]
 [ext_resource type="PackedScene" uid="uid://e4dut50npjkc" path="res://scenes/world/hallway.tscn" id="7_yat0y"]
 [ext_resource type="Script" uid="uid://doiqqd8vgge77" path="res://scenes/camera_float.gd" id="8_1uvfc"]
 [ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="10_btoap"]
+[ext_resource type="AudioStream" uid="uid://b1gqxbcq10084" path="res://assets/music/ScienTetology_001-consolidated.ogg" id="11_mihvs"]
 
 [node name="Game" type="Node3D" unique_id=1568713828]
 
@@ -36,10 +39,18 @@ transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.7, 0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1437734522]
 environment = ExtResource("10_btoap")
 
-[node name="Level" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1423305782]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1502936745]
+transform = Transform3D(-0.7181715, -0.41693947, 0.55712765, 0.6955081, -0.4044057, 0.59390604, -0.022317294, 0.81401336, 0.5804174, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Level" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1423305782 node_paths=PackedStringArray("soundPlayer", "music")]
 script = ExtResource("1_6pt5r")
 enemyScene = "res://scenes/securityguard.tscn"
 secondMaterial = ExtResource("2_4lxil")
+soundPlayer = NodePath("../../../Sound")
+music = NodePath("../../../Music")
+scream1 = ExtResource("5_koaqe")
+scream2 = ExtResource("3_flfdl")
 
 [node name="LevelBuilder" parent="SubViewportContainer/SubViewport/Level" unique_id=504064746 instance=ExtResource("2_7ahq7")]
 
@@ -55,9 +66,15 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2028340290]
 transform = Transform3D(-0.52025473, 0.1694226, -0.837037, 0.13827848, 0.9839025, 0.1132032, 0.842742, -0.05684971, -0.53530747, -0.15, 0.363, -0.2558982)
 current = true
+
+[node name="Music" type="AudioStreamPlayer3D" parent="." unique_id=2059107723]
+stream = ExtResource("11_mihvs")
 fov = 80.0
 far = 40.0
 script = ExtResource("8_1uvfc")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1053853676]
+volume_db = -25.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport" unique_id=2056829253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5110264, 0.44769388, -0.15256831)

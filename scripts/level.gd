@@ -16,7 +16,14 @@ var enemyTotal : int
 var activeEnemies : Array[Enemy]
 var aliveEnemies : Array[Enemy]
 
-var timePassed = -5
+@export var soundPlayer:AudioStreamPlayer3D
+
+@export var music:AudioStreamPlayer3D
+
+@export var scream1:AudioStream
+@export var scream2:AudioStream
+
+var timePassed = -1
 
 var won : bool = false
 
@@ -33,7 +40,7 @@ func _ready() -> void:
 		add_child(enemies[i])
 		enemies[i].position = Vector3(100,100,100)
 		enemies[i].rotation.y = -90
-	
+	music.play(0)
 	levelArray = levelBuilder.generate_level_data()
 	levelBuilder.queue_free()
 
@@ -66,12 +73,17 @@ func _process(delta: float) -> void:
 			j += 1
 	
 	var firstAliveEnemyIndex = activeEnemies.size() - aliveEnemies.size()
-	
 	if(levelArray.size() - firstAliveEnemyIndex != 0):
 		if(levelArray[firstAliveEnemyIndex].y > timePassed):
 			if Input.is_action_just_pressed("scream_1") && levelArray[firstAliveEnemyIndex].x == 1 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
+				if soundPlayer.playing: soundPlayer.stop()
+				soundPlayer.stream = scream1
+				soundPlayer.play()
 				enemyDied()
 			if Input.is_action_just_pressed("scream_2") && levelArray[firstAliveEnemyIndex].x == 2 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
+				if soundPlayer.playing: soundPlayer.stop()
+				soundPlayer.stream = scream2
+				soundPlayer.play()
 				enemyDied()
 		else:
 			gameLose()

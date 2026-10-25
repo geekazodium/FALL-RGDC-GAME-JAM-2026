@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://oi6a2bpwexal"]
 
 [ext_resource type="Script" uid="uid://bbn4jy6v10440" path="res://scripts/win_screen.gd" id="1_okh34"]
-[ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_q8i45"]
+[ext_resource type="PackedScene" uid="uid://sqskgqjmxcpt" path="res://scenes/Test Game.tscn" id="2_jrum5"]
 [ext_resource type="Texture2D" uid="uid://cwbsl1a3jsihp" path="res://assets/materials/unlit/tetoPear.jpg" id="3_jrum5"]
 [ext_resource type="FontFile" uid="uid://cilcccn0oen3j" path="res://assets/Fonts/yoster.ttf" id="3_q8i45"]
 
@@ -22,7 +22,7 @@ expand_margin_bottom = 10.0
 
 [node name="WinScreen" type="Node3D" unique_id=1658752009]
 script = ExtResource("1_okh34")
-playScene = ExtResource("2_q8i45")
+playScene = ExtResource("2_jrum5")
 
 [node name="Control" type="Control" parent="." unique_id=1827753879]
 layout_mode = 3

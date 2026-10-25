@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6nb2vigpwv3e"]
 
 [ext_resource type="Script" uid="uid://cysm6y6rbmuaq" path="res://scripts/game_over.gd" id="1_rpft6"]
-[ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_rpft6"]
+[ext_resource type="PackedScene" uid="uid://sqskgqjmxcpt" path="res://scenes/Test Game.tscn" id="2_bsda6"]
 [ext_resource type="FontFile" uid="uid://cilcccn0oen3j" path="res://assets/Fonts/yoster.ttf" id="3_3myqg"]
 [ext_resource type="Texture2D" uid="uid://owsutv8vqss3" path="res://assets/materials/unlit/game_over.png" id="3_bsda6"]
 
@@ -24,7 +24,7 @@ expand_margin_bottom = 10.0
 
 [node name="GameOver" type="Node3D" unique_id=332619268]
 script = ExtResource("1_rpft6")
-playScene = ExtResource("2_rpft6")
+playScene = ExtResource("2_bsda6")
 
 [node name="Control" type="Control" parent="." unique_id=773977489]
 layout_mode = 3

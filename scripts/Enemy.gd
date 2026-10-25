@@ -19,7 +19,7 @@ func stun():
 	if not isStunned:
 		hitVFX.emitting = true
 		isStunned = true
-		ragdoll()
+		#ragdoll()
 		player.stop()
 
 func unstun():
