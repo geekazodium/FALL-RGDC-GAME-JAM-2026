@@ -1,10 +1,13 @@
 extends Node3D
 
-@export var areaHolder:Node
-
 @export var BPM:int = 120
 @export var timeSign:int = 4
-@export var area_scene:Array[PackedScene]
+@export var enemyPoolSize : int = 6
+@export var enemyScene : String
+@export var levelArray : PackedVector2Array
+@export var enemySpawnTime : float = 10
+@export var hitTime : float = 1
+
 
 var enemies : Array[Enemy]
 var enemyTotal : int
