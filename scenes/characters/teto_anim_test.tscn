@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ki0fb7h1g75v"]
 
 [ext_resource type="Script" uid="uid://3x4g2qyibn5u" path="res://scripts/play_anim_test.gd" id="2_y2ch2"]
-[ext_resource type="PackedScene" uid="uid://bqdkp8ithmf3b" path="res://scenes/window_breakable.tscn" id="4_3vxm1"]
 [ext_resource type="PackedScene" uid="uid://bybg7i4dclyel" path="res://scenes/characters/securityguard.tscn" id="5_3vxm1"]
 [ext_resource type="PackedScene" uid="uid://bsfmymqcw1rw8" path="res://assets/models/teto_model.fbx" id="5_k53f4"]
 [ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/flash.tres" id="5_sswr7"]
@@ -24,7 +23,7 @@ mouse_target = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=383648612]
 handle_input_locally = false
-size = Vector2i(384, 216)
+size = Vector2i(385, 240)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=168700380]
@@ -39,9 +38,6 @@ mesh = SubResource("QuadMesh_qqjg0")
 [node name="teto_updated" parent="SubViewportContainer/SubViewport" unique_id=640150139 instance=ExtResource("5_k53f4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
 script = ExtResource("2_y2ch2")
-
-[node name="window" parent="SubViewportContainer/SubViewport" unique_id=1860067738 instance=ExtResource("4_3vxm1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37225044, 0, 0)
 
 [node name="securityguard_model2" parent="SubViewportContainer/SubViewport" unique_id=1372193599 instance=ExtResource("5_3vxm1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1964659, -0.06797519, -0.5558063)
