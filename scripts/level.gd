@@ -6,15 +6,26 @@ extends Node3D
 @export var timeSign:int = 4
 @export var area_scene:Array[PackedScene]
 
-var bpm = 0
+var enemies : Array[Enemy]
+var enemyTotal : int
+var activeEnemies : Array[Enemy]
+var aliveEnemies : Array[Enemy]
+
+var timePassed = 0
+
+var won : bool = false
+
+var bps = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	@warning_ignore("integer_division")
 	bps = BPM / 60
 	for i in range(enemyPoolSize):
 		enemies.append(load(enemyScene).instantiate())
 		add_child(enemies[i])
 		enemies[i].position = Vector3(100,100,100)
+		enemies[i].rotation.y = -90
 
 var hit = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,18 +34,46 @@ func _process(delta: float) -> void:
 	timePassed += speed
 	#print("hit " + str((int(timePassed) / timeSign) + 1) + " : " + str((int(timePassed) % timeSign + 1)))
 	
-	for a in areaHolder.get_children():
-		a.position.x -= speed
+	if(levelArray.size() > activeEnemies.size()):
+		if(levelArray[activeEnemies.size()].y - timePassed < enemySpawnTime):
+			var enemyIndex = enemyTotal % enemyPoolSize
+			enemyTotal += 1
+			activeEnemies.append(enemies[enemyIndex])
+			aliveEnemies.append(enemies[enemyIndex])
+			enemies[enemyIndex].position = Vector3(100,0,0)
 	
-	if areaHolder.get_child_count() > 0:
-		if areaHolder.get_child(0).position.x <= -16:
-			removeArea()
-			spawn_new_area()
+	var j : int = 0
+	for useless in range(activeEnemies.size()):
+		activeEnemies[j].position.x = (levelArray[j].y - timePassed) * bps
+		if(activeEnemies[j].position.x <= -enemySpawnTime):
+			activeEnemies[0].position = Vector3(100, 100, 100)
+			activeEnemies[0].unstun()
+			activeEnemies.remove_at(0)
+			levelArray.remove_at(0)
+		else:
+			j += 1
+	
+	var firstAliveEnemyIndex = activeEnemies.size() - aliveEnemies.size()
+	
+	if(levelArray.size() - firstAliveEnemyIndex != 0):
+		if(levelArray[firstAliveEnemyIndex].y > timePassed):
+			if Input.is_action_just_pressed("scream_1") && levelArray[firstAliveEnemyIndex].x == 1 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
+				print("timing hit")
+				enemyDied()
+			if Input.is_action_just_pressed("scream_2") && levelArray[firstAliveEnemyIndex].x == 2 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
+				print("timing hit")
+				enemyDied()
+		else:
+			gameLose()
+	elif(!won):
+		won = true
+		gameWin()
+	
 
-func removeArea():
-	var areaToRemove = areaHolder.get_child(0)
-	areaHolder.remove_child(areaToRemove)
-	areaToRemove.queue_free()
+func setBPM(_bpm):
+	BPM = _bpm
+	@warning_ignore("integer_division")
+	bps = BPM / 60
 
 func spawn_new_area():
 	var rand = randi() % area_scene.size()
@@ -43,6 +82,11 @@ func spawn_new_area():
 	areaHolder.add_child(scene)
 	pass
 
-func setBPM(_bpm):
-	BPM = _bpm
-	bpm = BPM / 60
+func gameWin():
+	print("game won")
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	
+func enemyDied():
+	aliveEnemies[0].stun()
+	aliveEnemies.remove_at(0)

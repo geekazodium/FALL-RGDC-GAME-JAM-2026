@@ -4,14 +4,20 @@
 [ext_resource type="Script" uid="uid://d2yc66atexkrn" path="res://scripts/score_manager.gd" id="4_yat0y"]
 [ext_resource type="PackedScene" uid="uid://bfnirymg7fiw5" path="res://scenes/game_ui.tscn" id="6_1uvfc"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
+size = Vector3(20, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ka5s"]
+size = Vector3(20, 0.1, 2)
+
 [node name="Game" type="Node3D" unique_id=1568713828]
 
 [node name="Level" type="Node3D" parent="." unique_id=1423305782 node_paths=PackedStringArray("areaHolder")]
 script = ExtResource("1_6pt5r")
 areaHolder = NodePath(".")
 BPM = 150
-levelArray = PackedVector2Array(1, 2, 2, 4, 1, 6)
-enemyScene = "res://scenes/enemy.tscn"
+levelArray = PackedVector2Array(1, 2, 2, 4, 1, 6, 2, 10, 1, 15, 2, 20, 1, 22, 2, 25)
+enemyScene = "res://scenes/securityguard.tscn"
 
 [node name="Score" type="Node" parent="." unique_id=834111531]
 script = ExtResource("4_yat0y")
@@ -26,4 +32,11 @@ size = 5.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=658987109]
 transform = Transform3D(0.65736574, -0.35275754, 0.6659072, 0, 0.8836681, 0.46811417, -0.7535718, -0.3077222, 0.5808931, 0, 5.58427, 0)
 
-[connection signal="onBeatHit" from="Level" to="Game UI" method="_on_level_on_beat_hit"]
+[node name="floor" type="StaticBody3D" parent="." unique_id=2011291205]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0492599, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=70070201]
+mesh = SubResource("BoxMesh_7o0as")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1146728484]
+shape = SubResource("BoxShape3D_1ka5s")
