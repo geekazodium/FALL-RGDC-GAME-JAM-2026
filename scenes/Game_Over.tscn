@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://byd3q1mlikjny"]
+[gd_scene format=3 uid="uid://b6nb2vigpwv3e"]
 
 [ext_resource type="Script" uid="uid://cysm6y6rbmuaq" path="res://scripts/game_over.gd" id="1_rpft6"]
 [ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_rpft6"]
