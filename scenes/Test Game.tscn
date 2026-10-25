@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://sqskgqjmxcpt"]
 
 [ext_resource type="Script" uid="uid://cc6do0kx18fe1" path="res://scripts/level.gd" id="1_6pt5r"]
+[ext_resource type="Material" uid="uid://be2mpd3d0xkis" path="res://assets/materials/unlit/security_guard_surface2.tres" id="2_4lxil"]
 [ext_resource type="PackedScene" uid="uid://odnxywbhgt1r" path="res://scenes/editor/level_builder.tscn" id="2_7ahq7"]
 [ext_resource type="Script" uid="uid://d2yc66atexkrn" path="res://scripts/score_manager.gd" id="4_yat0y"]
 [ext_resource type="PackedScene" uid="uid://218hehes6h5w" path="res://scenes/player.tscn" id="5_hosqq"]
@@ -16,13 +17,8 @@ size = Vector3(20, 0.1, 2)
 
 [node name="Level" type="Node3D" parent="." unique_id=1423305782]
 script = ExtResource("1_6pt5r")
-BPM = 150
-timeSign = null
-enemyPoolSize = null
 enemyScene = "res://scenes/securityguard.tscn"
-levelArray = null
-enemySpawnTime = null
-hitTime = null
+secondMaterial = ExtResource("2_4lxil")
 
 [node name="LevelBuilder" parent="Level" unique_id=504064746 instance=ExtResource("2_7ahq7")]
 

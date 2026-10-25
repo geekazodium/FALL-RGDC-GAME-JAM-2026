@@ -7,6 +7,7 @@ extends Node3D
 @export var levelArray : PackedVector2Array
 @export var enemySpawnTime : float = 5
 @export var hitTime : float = 1
+@export var secondMaterial : ShaderMaterial
 
 @onready var player : Player = %Player
 
@@ -47,6 +48,10 @@ func _process(delta: float) -> void:
 			activeEnemies.append(enemies[enemyIndex])
 			aliveEnemies.append(enemies[enemyIndex])
 			enemies[enemyIndex].position = Vector3(100,0,0)
+			if(levelArray[activeEnemies.size()].x == 1):
+				enemies[enemyIndex].mesh.material_override = null
+			else:
+				enemies[enemyIndex].mesh.material_override = secondMaterial
 	
 	var j : int = 0
 	for useless in range(activeEnemies.size()):
@@ -80,12 +85,12 @@ func setBPM(_bpm):
 	bps = BPM / 60
 
 func gameLose():
-	print("game lost")
+	pass
+	get_tree().change_scene_to_file("res://scenes/Game_Over.tscn")
 
 func gameWin():
-	print("game won")
 	await get_tree().create_timer(2).timeout
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/WinScreen.tscn")
 	
 func enemyDied():
 	aliveEnemies[0].stun()
