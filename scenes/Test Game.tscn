@@ -12,12 +12,11 @@ size = Vector3(20, 0.1, 2)
 
 [node name="Game" type="Node3D" unique_id=1568713828]
 
-[node name="Level" type="Node3D" parent="." unique_id=1423305782 node_paths=PackedStringArray("areaHolder")]
+[node name="Level" type="Node3D" parent="." unique_id=1423305782]
 script = ExtResource("1_6pt5r")
-areaHolder = NodePath(".")
 BPM = 150
-levelArray = PackedVector2Array(1, 2, 2, 4, 1, 6, 2, 10, 1, 15, 2, 20, 1, 22, 2, 25)
 enemyScene = "res://scenes/securityguard.tscn"
+levelArray = PackedVector2Array(1, 2, 2, 4, 1, 6, 2, 10, 1, 15, 2, 20, 1, 22, 2, 25)
 
 [node name="Score" type="Node" parent="." unique_id=834111531]
 script = ExtResource("4_yat0y")
