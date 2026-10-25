@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://d2yc66atexkrn" path="res://scripts/score_manager.gd" id="4_yat0y"]
 [ext_resource type="PackedScene" uid="uid://218hehes6h5w" path="res://scenes/player.tscn" id="5_hosqq"]
 [ext_resource type="PackedScene" uid="uid://bfnirymg7fiw5" path="res://scenes/game_ui.tscn" id="6_1uvfc"]
+[ext_resource type="PackedScene" uid="uid://e4dut50npjkc" path="res://scenes/world/hallway.tscn" id="7_yat0y"]
+[ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="10_btoap"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
 size = Vector3(20, 0.1, 2)
@@ -15,35 +17,59 @@ size = Vector3(20, 0.1, 2)
 
 [node name="Game" type="Node3D" unique_id=1568713828]
 
-[node name="Level" type="Node3D" parent="." unique_id=1423305782]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1877544355]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 3
+mouse_target = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1814872042]
+handle_input_locally = false
+size = Vector2i(385, 240)
+render_target_update_mode = 4
+
+[node name="hallway" parent="SubViewportContainer/SubViewport" unique_id=1382478893 instance=ExtResource("7_yat0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7, 0, -0.098)
+
+[node name="hallway2" parent="SubViewportContainer/SubViewport" unique_id=1197408403 instance=ExtResource("7_yat0y")]
+transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.7, 0, 0.32401574)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1437734522]
+environment = ExtResource("10_btoap")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1502936745]
+transform = Transform3D(-0.7181715, -0.41693947, 0.55712765, 0.6955081, -0.4044057, 0.59390604, -0.022317294, 0.81401336, 0.5804174, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Level" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1423305782]
 script = ExtResource("1_6pt5r")
 enemyScene = "res://scenes/securityguard.tscn"
 secondMaterial = ExtResource("2_4lxil")
 
-[node name="LevelBuilder" parent="Level" unique_id=504064746 instance=ExtResource("2_7ahq7")]
+[node name="LevelBuilder" parent="SubViewportContainer/SubViewport/Level" unique_id=504064746 instance=ExtResource("2_7ahq7")]
 
-[node name="Score" type="Node" parent="." unique_id=834111531]
+[node name="Score" type="Node" parent="SubViewportContainer/SubViewport" unique_id=834111531]
 script = ExtResource("4_yat0y")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=548941266]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.048, 6.091)
-projection = 1
-size = 5.0
+[node name="Game UI" parent="SubViewportContainer/SubViewport" unique_id=1675265441 instance=ExtResource("6_1uvfc")]
 
-[node name="Game UI" parent="." unique_id=1675265441 instance=ExtResource("6_1uvfc")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=658987109]
-transform = Transform3D(0.65736574, -0.35275754, 0.6659072, 0, 0.8836681, 0.46811417, -0.7535718, -0.3077222, 0.5808931, 0, 5.58427, 0)
-
-[node name="floor" type="StaticBody3D" parent="." unique_id=2011291205]
+[node name="floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=2011291205]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0492599, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=70070201]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/floor" unique_id=70070201]
 mesh = SubResource("BoxMesh_7o0as")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1146728484]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/floor" unique_id=1146728484]
 shape = SubResource("BoxShape3D_1ka5s")
 
-[node name="Player" parent="." unique_id=782149683 instance=ExtResource("5_hosqq")]
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=782149683 instance=ExtResource("5_hosqq")]
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2028340290]
+transform = Transform3D(0.47736603, 0.09324203, -0.87374353, 0.19879997, 0.9571113, 0.21075219, 0.8559208, -0.27430618, 0.43835586, -0.30477962, 0.36951151, 0.38725382)
+current = true

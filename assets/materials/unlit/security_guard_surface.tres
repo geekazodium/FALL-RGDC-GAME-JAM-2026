@@ -10,3 +10,4 @@ shader_parameter/MainTexture = ExtResource("2_c5nw4")
 shader_parameter/Chromakey = Color(0.3254902, 0.5019608, 0.6627451, 1)
 shader_parameter/ChromaReplace = Color(0.86722285, 0.48063403, 0.80658346, 1)
 shader_parameter/ChromaThreashold = 0.2
+shader_parameter/lightStep = 0.2

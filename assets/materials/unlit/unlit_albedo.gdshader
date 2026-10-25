@@ -1,10 +1,12 @@
 shader_type spatial;
-render_mode unshaded;
 
 uniform sampler2D MainTexture;
 uniform vec3 Chromakey: source_color;
 uniform vec3 ChromaReplace: source_color;
 uniform float ChromaThreashold = -1;
+uniform float lightStep = 0.2;
+
+uniform float albedo_brightness = .5;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
@@ -18,9 +20,12 @@ void fragment() {
 		blend = 0.;
 	}
 	ALBEDO = ALBEDO + (ChromaReplace - ALBEDO) * clamp(blend, 0, 1);
+	//AO = 0.;
 }
 
-//void light() {
-//	// Called for every pixel for every light affecting the material.
-//	// Uncomment to replace the default light processing function with this one.
-//}
+void light() {
+    if (LIGHT_IS_AREA) {
+    } else {
+        DIFFUSE_LIGHT = albedo_brightness * step(lightStep, dot(NORMAL, LIGHT) * ATTENUATION) * LIGHT_COLOR / PI;
+    }
+}
