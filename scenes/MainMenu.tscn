@@ -106,14 +106,15 @@ theme_override_font_sizes/font_size = 30
 text = "Begin"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1830745235]
-offset_left = 787.0
-offset_top = 462.0
-offset_right = 1065.0
-offset_bottom = 589.0
+offset_left = 726.0
+offset_top = 497.0
+offset_right = 1093.0
+offset_bottom = 624.0
 theme_override_fonts/normal_font = ExtResource("3_ow34m")
 theme_override_font_sizes/normal_font_size = 25
-text = "F - Scream 1
-J - Scream 2"
+bbcode_enabled = true
+text = "[color=pink](F/Left mouse) - Scream 1[/color]
+[color=blue](J/Right mouse) - Scream 2[/color]"
 horizontal_alignment = 1
 vertical_alignment = 1
 

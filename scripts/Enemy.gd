@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 func stun():
 	if not isStunned:
 		isStunned = true
-		ragdoll()
+		#ragdoll()
 		player.stop()
 
 func unstun():
