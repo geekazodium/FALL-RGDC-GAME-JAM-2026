@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ki0fb7h1g75v"]
 
 [ext_resource type="Script" uid="uid://3x4g2qyibn5u" path="res://scripts/play_anim_test.gd" id="2_y2ch2"]
-[ext_resource type="PackedScene" uid="uid://bc0uovq7qh6sf" path="res://assets/models/window.tscn" id="4_pgsgt"]
+[ext_resource type="PackedScene" uid="uid://bqdkp8ithmf3b" path="res://scenes/window_breakable.tscn" id="4_3vxm1"]
 [ext_resource type="PackedScene" uid="uid://bybg7i4dclyel" path="res://scenes/characters/securityguard.tscn" id="5_3vxm1"]
 [ext_resource type="PackedScene" uid="uid://bsfmymqcw1rw8" path="res://assets/models/teto_model.fbx" id="5_k53f4"]
 [ext_resource type="Material" uid="uid://fd3xbtl04kje" path="res://assets/materials/effects/flash.tres" id="5_sswr7"]
+[ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="6_u5qe7"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_qqjg0"]
 material = ExtResource("5_sswr7")
@@ -39,8 +40,15 @@ mesh = SubResource("QuadMesh_qqjg0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
 script = ExtResource("2_y2ch2")
 
-[node name="window" parent="SubViewportContainer/SubViewport" unique_id=1721686881 instance=ExtResource("4_pgsgt")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.6024425, 0, 0.03712958)
+[node name="window" parent="SubViewportContainer/SubViewport" unique_id=1860067738 instance=ExtResource("4_3vxm1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37225044, 0, 0)
 
 [node name="securityguard_model2" parent="SubViewportContainer/SubViewport" unique_id=1372193599 instance=ExtResource("5_3vxm1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1964659, -0.06797519, -0.5558063)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1017756417]
+environment = ExtResource("6_u5qe7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=255862512]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true

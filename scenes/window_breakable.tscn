@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bqdkp8ithmf3b"]
+
+[ext_resource type="PackedScene" uid="uid://bc0uovq7qh6sf" path="res://assets/models/window.tscn" id="1_tmv4k"]
+
+[node name="window" unique_id=1860067738 instance=ExtResource("1_tmv4k")]
