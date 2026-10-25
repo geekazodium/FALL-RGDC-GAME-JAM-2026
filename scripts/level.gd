@@ -85,12 +85,12 @@ func setBPM(_bpm):
 	bps = BPM / 60
 
 func gameLose():
-	print("game lost")
+	pass
+	get_tree().change_scene_to_file("res://scenes/Game_Over.tscn")
 
 func gameWin():
-	print("game won")
 	await get_tree().create_timer(2).timeout
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/WinScreen.tscn")
 	
 func enemyDied():
 	aliveEnemies[0].stun()
