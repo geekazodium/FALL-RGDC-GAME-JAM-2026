@@ -13,12 +13,6 @@
 [ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="10_btoap"]
 [ext_resource type="AudioStream" uid="uid://b1gqxbcq10084" path="res://assets/music/ScienTetology_001-consolidated.ogg" id="11_mihvs"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
-size = Vector3(20, 0.1, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1ka5s"]
-size = Vector3(20, 0.1, 2)
-
 [node name="Game" type="Node3D" unique_id=1568713828]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1877544355]
@@ -64,15 +58,6 @@ scream2 = ExtResource("3_flfdl")
 script = ExtResource("4_yat0y")
 
 [node name="Game UI" parent="SubViewportContainer/SubViewport" unique_id=1675265441 instance=ExtResource("6_1uvfc")]
-
-[node name="floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=2011291205]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0492599, -0.1888982)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/floor" unique_id=70070201]
-mesh = SubResource("BoxMesh_7o0as")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/floor" unique_id=1146728484]
-shape = SubResource("BoxShape3D_1ka5s")
 
 [node name="Player" parent="SubViewportContainer/SubViewport" unique_id=782149683 instance=ExtResource("5_hosqq")]
 unique_name_in_owner = true
