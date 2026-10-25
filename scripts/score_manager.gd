@@ -7,7 +7,7 @@ var levelNode
 var score:float = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	levelNode = get_tree().root.get_node("Game/Level")
+	#levelNode = get_tree().root.get_node("Game/Level")
 	pass # Replace with function body.
 
 
