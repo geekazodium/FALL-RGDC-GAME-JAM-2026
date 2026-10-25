@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://oi6a2bpwexal"]
 
-[ext_resource type="Script" uid="uid://bbn4jy6v10440" path="res://scripts/win_screen.gd" id="1_okh34"]
-[ext_resource type="PackedScene" uid="uid://sqskgqjmxcpt" path="res://scenes/Test Game.tscn" id="2_jrum5"]
-[ext_resource type="Texture2D" uid="uid://cwbsl1a3jsihp" path="res://assets/materials/unlit/tetoPear.jpg" id="3_jrum5"]
+[ext_resource type="Script" uid="uid://brfgu3tgh5ub2" path="res://scenes/win_screen.gd" id="1_okh34"]
 [ext_resource type="FontFile" uid="uid://cilcccn0oen3j" path="res://assets/Fonts/yoster.ttf" id="3_q8i45"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wpmu"]
@@ -20,46 +18,36 @@ expand_margin_top = 10.0
 expand_margin_right = 25.0
 expand_margin_bottom = 10.0
 
-[node name="WinScreen" type="Node3D" unique_id=1658752009]
-script = ExtResource("1_okh34")
-playScene = ExtResource("2_jrum5")
-
-[node name="Control" type="Control" parent="." unique_id=1827753879]
+[node name="Control" type="Control" unique_id=1827753879]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_okh34")
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=39926570]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=348459343]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_jrum5")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect" unique_id=348459343]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = -17.5
+offset_right = 17.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="WinText" type="Label" parent="Control/TextureRect/VBoxContainer" unique_id=1429828840]
+[node name="WinText" type="Label" parent="VBoxContainer" unique_id=1429828840]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_q8i45")
-theme_override_font_sizes/font_size = 183
+theme_override_font_sizes/font_size = 173
 text = "EPIC WIN!!!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Play Again" type="Button" parent="Control/TextureRect/VBoxContainer" unique_id=1009795201]
+[node name="Play Again" type="Button" parent="VBoxContainer" unique_id=1009795201]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -67,5 +55,3 @@ theme_override_fonts/font = ExtResource("3_q8i45")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_1wpmu")
 text = "Play Again"
-
-[connection signal="pressed" from="Control/TextureRect/VBoxContainer/Play Again" to="." method="_on_play_again_pressed"]
