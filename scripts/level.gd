@@ -2,23 +2,26 @@ extends Node3D
 
 @export var BPM:int = 120
 @export var timeSign:int = 4
-@export var enemyPoolSize : int = 6
+@export var enemyPoolSize : int = 12
 @export var enemyScene : String
 @export var levelArray : PackedVector2Array
-@export var enemySpawnTime : float = 10
+@export var enemySpawnTime : float = 5
 @export var hitTime : float = 1
 
+@onready var player : Player = %Player
 
 var enemies : Array[Enemy]
 var enemyTotal : int
 var activeEnemies : Array[Enemy]
 var aliveEnemies : Array[Enemy]
 
-var timePassed = 0
+var timePassed = -5
 
 var won : bool = false
 
 var bps = 0
+
+@onready var levelBuilder : LevelBuilder = $LevelBuilder
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,8 +32,10 @@ func _ready() -> void:
 		add_child(enemies[i])
 		enemies[i].position = Vector3(100,100,100)
 		enemies[i].rotation.y = -90
+	
+	levelArray = levelBuilder.generate_level_data()
+	levelBuilder.queue_free()
 
-var hit = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timePassed += delta
@@ -59,10 +64,8 @@ func _process(delta: float) -> void:
 	if(levelArray.size() - firstAliveEnemyIndex != 0):
 		if(levelArray[firstAliveEnemyIndex].y > timePassed):
 			if Input.is_action_just_pressed("scream_1") && levelArray[firstAliveEnemyIndex].x == 1 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
-				print("timing hit")
 				enemyDied()
 			if Input.is_action_just_pressed("scream_2") && levelArray[firstAliveEnemyIndex].x == 2 && levelArray[firstAliveEnemyIndex].y - timePassed < hitTime:
-				print("timing hit")
 				enemyDied()
 		else:
 			gameLose()

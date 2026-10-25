@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://sqskgqjmxcpt"]
 
 [ext_resource type="Script" uid="uid://cc6do0kx18fe1" path="res://scripts/level.gd" id="1_6pt5r"]
+[ext_resource type="PackedScene" uid="uid://odnxywbhgt1r" path="res://scenes/editor/level_builder.tscn" id="2_7ahq7"]
 [ext_resource type="Script" uid="uid://d2yc66atexkrn" path="res://scripts/score_manager.gd" id="4_yat0y"]
+[ext_resource type="PackedScene" uid="uid://b3nxsxkq6cb4j" path="res://scenes/player.tscn" id="5_hosqq"]
 [ext_resource type="PackedScene" uid="uid://bfnirymg7fiw5" path="res://scenes/game_ui.tscn" id="6_1uvfc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
@@ -15,8 +17,14 @@ size = Vector3(20, 0.1, 2)
 [node name="Level" type="Node3D" parent="." unique_id=1423305782]
 script = ExtResource("1_6pt5r")
 BPM = 150
+timeSign = null
+enemyPoolSize = null
 enemyScene = "res://scenes/securityguard.tscn"
-levelArray = PackedVector2Array(1, 2, 2, 4, 1, 6, 2, 10, 1, 15, 2, 20, 1, 22, 2, 25)
+levelArray = null
+enemySpawnTime = null
+hitTime = null
+
+[node name="LevelBuilder" parent="Level" unique_id=504064746 instance=ExtResource("2_7ahq7")]
 
 [node name="Score" type="Node" parent="." unique_id=834111531]
 script = ExtResource("4_yat0y")
@@ -39,3 +47,7 @@ mesh = SubResource("BoxMesh_7o0as")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1146728484]
 shape = SubResource("BoxShape3D_1ka5s")
+
+[node name="Player" parent="." unique_id=782149683 instance=ExtResource("5_hosqq")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
