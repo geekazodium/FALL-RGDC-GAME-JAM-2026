@@ -2,7 +2,7 @@ extends Node3D
 
 @export var BPM:int = 120
 @export var timeSign:int = 4
-@export var enemyPoolSize : int = 6
+@export var enemyPoolSize : int = 20
 @export var enemyScene : String
 @export var levelArray : PackedVector2Array
 @export var enemySpawnTime : float = 10
@@ -14,11 +14,13 @@ var enemyTotal : int
 var activeEnemies : Array[Enemy]
 var aliveEnemies : Array[Enemy]
 
-var timePassed = 0
+var timePassed = -5
 
 var won : bool = false
 
 var bps = 0
+
+@onready var levelBuilder : LevelBuilder = $LevelBuilder
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,8 +31,10 @@ func _ready() -> void:
 		add_child(enemies[i])
 		enemies[i].position = Vector3(100,100,100)
 		enemies[i].rotation.y = -90
+	
+	levelArray = levelBuilder.generate_level_data()
+	levelBuilder.queue_free()
 
-var hit = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timePassed += delta
@@ -42,6 +46,7 @@ func _process(delta: float) -> void:
 			activeEnemies.append(enemies[enemyIndex])
 			aliveEnemies.append(enemies[enemyIndex])
 			enemies[enemyIndex].position = Vector3(100,0,0)
+			print("enemy placed")
 	
 	var j : int = 0
 	for useless in range(activeEnemies.size()):
