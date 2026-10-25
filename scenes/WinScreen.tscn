@@ -5,6 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://cwbsl1a3jsihp" path="res://assets/materials/unlit/tetoPear.jpg" id="3_jrum5"]
 [ext_resource type="FontFile" uid="uid://cilcccn0oen3j" path="res://assets/Fonts/yoster.ttf" id="3_q8i45"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wpmu"]
+bg_color = Color(0.22673061, 0.64325446, 0.86280686, 1)
+border_width_left = 25
+border_width_top = 25
+border_width_right = 5
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 1
+expand_margin_left = 25.0
+expand_margin_top = 10.0
+expand_margin_right = 25.0
+expand_margin_bottom = 10.0
+
 [node name="WinScreen" type="Node3D" unique_id=1658752009]
 script = ExtResource("1_okh34")
 playScene = ExtResource("2_q8i45")
@@ -48,7 +63,9 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 183
+theme_override_fonts/font = ExtResource("3_q8i45")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_1wpmu")
 text = "Play Again"
 
 [connection signal="pressed" from="Control/TextureRect/VBoxContainer/Play Again" to="." method="_on_play_again_pressed"]
