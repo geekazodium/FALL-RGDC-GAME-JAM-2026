@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://b6nb2vigpwv3e"]
 
-[ext_resource type="Script" uid="uid://cysm6y6rbmuaq" path="res://scripts/game_over.gd" id="1_rpft6"]
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_rpft6"]
+[gd_scene format=3 uid="uid://byd3q1mlikjny"]
+
+[ext_resource type="Script" uid="uid://cysm6y6rbmuaq" path="res://scenes/game_over.gd" id="1_rpft6"]
 [ext_resource type="PackedScene" uid="uid://b3cy6om8eylrw" path="res://scenes/Ragdoll Test.tscn" id="2_rpft6"]
 [ext_resource type="FontFile" uid="uid://cilcccn0oen3j" path="res://assets/Fonts/yoster.ttf" id="3_3myqg"]
-[ext_resource type="Texture2D" uid="uid://owsutv8vqss3" path="res://assets/materials/unlit/game_over.png" id="3_bsda6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpft6"]
 bg_color = Color(0.77955395, 0.21250814, 0.09760811, 1)
@@ -56,7 +58,6 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.0010853444, 0.0010853446, 0.0010853445, 1)
 theme_override_fonts/font = ExtResource("3_3myqg")
 theme_override_font_sizes/font_size = 128
 text = "Game Over :("
@@ -66,8 +67,7 @@ vertical_alignment = 1
 [node name="Retry" type="Button" parent="Control/TextureRect/VBoxContainer" unique_id=1315801713]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("3_3myqg")
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxFlat_rpft6")
 text = "Retry"

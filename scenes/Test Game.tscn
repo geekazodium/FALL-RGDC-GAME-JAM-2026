@@ -25,3 +25,5 @@ size = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=658987109]
 transform = Transform3D(0.65736574, -0.35275754, 0.6659072, 0, 0.8836681, 0.46811417, -0.7535718, -0.3077222, 0.5808931, 0, 5.58427, 0)
+
+[connection signal="onBeatHit" from="Level" to="Game UI" method="_on_level_on_beat_hit"]
