@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://e4dut50npjkc" path="res://scenes/world/hallway.tscn" id="1_immr1"]
 [ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="2_hu1uy"]
-[ext_resource type="PackedScene" uid="uid://b6nb2vigpwv3e" path="res://scenes/Game_Over.tscn" id="3_cat8n"]
 [ext_resource type="PackedScene" uid="uid://218hehes6h5w" path="res://scenes/player.tscn" id="4_yd7kw"]
+[ext_resource type="PackedScene" uid="uid://oi6a2bpwexal" path="res://scenes/WinScreen.tscn" id="5_immr1"]
 [ext_resource type="Script" uid="uid://doiqqd8vgge77" path="res://scenes/camera_float.gd" id="5_kswib"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7o0as"]
@@ -39,8 +39,6 @@ transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.7, 0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1437734522]
 environment = ExtResource("2_hu1uy")
 
-[node name="Control" parent="SubViewportContainer/SubViewport" unique_id=773977489 instance=ExtResource("3_cat8n")]
-
 [node name="floor" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=2011291205]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0492599, -0.1888982)
 
@@ -63,3 +61,6 @@ script = ExtResource("5_kswib")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport" unique_id=2056829253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5110264, 0.44769388, -0.15256831)
+
+[node name="Control" parent="SubViewportContainer" unique_id=1827753879 instance=ExtResource("5_immr1")]
+layout_mode = 2

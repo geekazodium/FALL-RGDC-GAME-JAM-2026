@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://6hbmahb0ewmx" path="res://assets/sound/scream1.ogg" id="5_koaqe"]
 [ext_resource type="PackedScene" uid="uid://bfnirymg7fiw5" path="res://scenes/game_ui.tscn" id="6_1uvfc"]
 [ext_resource type="PackedScene" uid="uid://e4dut50npjkc" path="res://scenes/world/hallway.tscn" id="7_yat0y"]
-[ext_resource type="Script" uid="uid://doiqqd8vgge77" path="res://scenes/camera_float.gd" id="8_1uvfc"]
 [ext_resource type="Environment" uid="uid://jxix71skd1s3" path="res://assets/enviornment/world_enviornment.tres" id="10_btoap"]
 [ext_resource type="AudioStream" uid="uid://b1gqxbcq10084" path="res://assets/music/ScienTetology_001-consolidated.ogg" id="11_mihvs"]
 
