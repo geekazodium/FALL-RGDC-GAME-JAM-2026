@@ -56,6 +56,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_3myqg")
 theme_override_font_sizes/font_size = 128
 text = "Game Over :("
@@ -65,7 +66,7 @@ vertical_alignment = 1
 [node name="Retry" type="Button" parent="Control/TextureRect/VBoxContainer" unique_id=1315801713]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxFlat_rpft6")
 text = "Retry"

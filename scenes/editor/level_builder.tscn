@@ -971,14 +971,6 @@ texture = ExtResource("2_10ckh")
 script = ExtResource("4_t7rvg")
 metadata/_custom_type_script = "uid://blka1moj5shdf"
 
-[node name="Note111" type="Sprite2D" parent="Notes" unique_id=64053189]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(5984, 32)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_10ckh")
-script = ExtResource("4_t7rvg")
-metadata/_custom_type_script = "uid://blka1moj5shdf"
-
 [node name="Note112" type="Sprite2D" parent="Notes" unique_id=1736694438]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(6016, -31.999996)
@@ -1052,14 +1044,6 @@ script = ExtResource("4_t7rvg")
 metadata/_custom_type_script = "uid://blka1moj5shdf"
 
 [node name="Note126" type="Sprite2D" parent="Notes" unique_id=43721514]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(6976, 32)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_10ckh")
-script = ExtResource("4_t7rvg")
-metadata/_custom_type_script = "uid://blka1moj5shdf"
-
-[node name="Note127" type="Sprite2D" parent="Notes" unique_id=900156031]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(6976, 32)
 scale = Vector2(0.2, 0.2)
@@ -1227,14 +1211,6 @@ texture = ExtResource("2_10ckh")
 script = ExtResource("4_t7rvg")
 metadata/_custom_type_script = "uid://blka1moj5shdf"
 
-[node name="Note149" type="Sprite2D" parent="Notes" unique_id=323591583]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(8032, -31.999996)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_10ckh")
-script = ExtResource("4_t7rvg")
-metadata/_custom_type_script = "uid://blka1moj5shdf"
-
 [node name="Note150" type="Sprite2D" parent="Notes" unique_id=747807936]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(8064, 31.999996)
@@ -1269,7 +1245,7 @@ metadata/_custom_type_script = "uid://blka1moj5shdf"
 
 [node name="Note155" type="Sprite2D" parent="Notes" unique_id=1041062804]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(8256, -31.999996)
+position = Vector2(8256, -32)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_10ckh")
 script = ExtResource("4_t7rvg")
@@ -1340,14 +1316,6 @@ script = ExtResource("4_t7rvg")
 metadata/_custom_type_script = "uid://blka1moj5shdf"
 
 [node name="Note164" type="Sprite2D" parent="Notes" unique_id=109436245]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(8544, 31.999996)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_10ckh")
-script = ExtResource("4_t7rvg")
-metadata/_custom_type_script = "uid://blka1moj5shdf"
-
-[node name="Note165" type="Sprite2D" parent="Notes" unique_id=40672496]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(8544, 31.999996)
 scale = Vector2(0.2, 0.2)
