@@ -27,6 +27,6 @@ void fragment() {
 void light() {
     if (LIGHT_IS_AREA) {
     } else {
-        DIFFUSE_LIGHT = albedo_brightness * clamp(dot(NORMAL, LIGHT) * ATTENUATION, 0 , 1) * LIGHT_COLOR / PI;
+        DIFFUSE_LIGHT = albedo_brightness * floor(clamp(dot(NORMAL, LIGHT) * ATTENUATION, 0 , 1) * 4.) / 4. * LIGHT_COLOR / PI;
     }
 }
