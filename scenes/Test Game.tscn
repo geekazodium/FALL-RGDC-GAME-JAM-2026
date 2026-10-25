@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cc6do0kx18fe1" path="res://scripts/level.gd" id="1_6pt5r"]
 [ext_resource type="PackedScene" uid="uid://odnxywbhgt1r" path="res://scenes/editor/level_builder.tscn" id="2_7ahq7"]
 [ext_resource type="Script" uid="uid://d2yc66atexkrn" path="res://scripts/score_manager.gd" id="4_yat0y"]
-[ext_resource type="PackedScene" uid="uid://b3nxsxkq6cb4j" path="res://scenes/player.tscn" id="5_hosqq"]
+[ext_resource type="PackedScene" uid="uid://218hehes6h5w" path="res://scenes/player.tscn" id="5_hosqq"]
 [ext_resource type="PackedScene" uid="uid://bfnirymg7fiw5" path="res://scenes/game_ui.tscn" id="6_1uvfc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7o0as"]

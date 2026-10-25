@@ -1,14 +1,13 @@
 extends Node3D
 class_name Player
 
-@onready var animplayer : AnimationPlayer = $AnimationPlayer
+@onready var animplayer : AnimationTree = $AnimationTree
 
 var screaming : bool = false
-
-# Called when the node enters the scene tree for the first time.
+#
+## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	animplayer.animation_finished.connect(Run)
-	animplayer.play("rig|run")
+	$ScreamCDTimer.timeout.connect(self.cooldown_over);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,16 +18,18 @@ func _process(delta: float) -> void:
 
 func Scream1() -> void:
 	if !screaming:
-		animplayer.play("rig|YELL")
+		$ScreamCDTimer.start();
+		animplayer.set("parameters/OneShot/request",true);
 		screaming = true
 	
 func Scream2() -> void:
 	if !screaming:
-		animplayer.play("rig|YELL")
+		$ScreamCDTimer.start();
+		animplayer.set("parameters/OneShot/request",true);
 		screaming = true
 	
-func Run(name : StringName) -> void:
+func cooldown_over() -> void:
 	print("run called")
 	if screaming:
-		animplayer.play("rig|run")
+		#animplayer.play("rig|run")
 		screaming = false
